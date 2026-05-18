@@ -21,7 +21,9 @@ import Footer from '../components/Footer.astro';
           cuando sus familias están tranquilas. Eso no ha cambiado en 30 años.
         </p>
       </div>
-      <div class="page-hero__img-placeholder" aria-hidden="true">📷 Foto fachada / historia</div>
+      <div class="page-hero__img">
+        <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/site/nosotros-hero.png`} alt="Rincón de Matías — equipo y niños" />
+      </div>
     </div>
   </section>
 
@@ -115,23 +117,23 @@ import Footer from '../components/Footer.astro';
           <ul class="proyecto__lista">
             {[
               {
-                icono: '🌱',
+                img: '/images/proyecto-educativo/icono-1.png',
                 titulo: 'Desarrollo integral personalizado',
                 desc: 'Aprendizajes adaptados al ritmo de cada niño, combinando actividades lúdicas, bienestar y socialización.',
               },
               {
-                icono: '🏫',
+                img: '/images/proyecto-educativo/icono-5.png',
                 titulo: 'Ambiente seguro y estimulante',
                 desc: 'Espacios diseñados para lograr aprendizajes significativos, con monitoreo constante y un equipo técnico-pedagógico comprometido.',
               },
               {
-                icono: '🤝',
+                img: '/images/proyecto-educativo/icono-2.png',
                 titulo: 'Apoyo constante a la familia',
                 desc: 'Horarios flexibles y adaptables, alimentación equilibrada y comunicación permanente con cada familia.',
               },
             ].map(b => (
               <li class="proyecto__item">
-                <span class="proyecto__icono">{b.icono}</span>
+                <img class="proyecto__icono-img" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${b.img}`} alt={b.titulo} />
                 <div>
                   <strong>{b.titulo}</strong>
                   <p>{b.desc}</p>
@@ -171,12 +173,12 @@ import Footer from '../components/Footer.astro';
         </div>
         <div class="proyecto__valores-beneficios">
           {[
-            { icono: '🌱', titulo: 'Formación integral en valores', desc: 'Desarrollo del carácter y habilidades sociales a través de experiencias significativas diarias.' },
-            { icono: '🏫', titulo: 'Convivencia positiva', desc: 'Espacios seguros donde se practica el respeto y la empatía entre todos los miembros de la comunidad.' },
-            { icono: '🤸', titulo: 'Aprendizaje social activo', desc: 'Experiencias educativas diseñadas para fortalecer el compañerismo, la responsabilidad y la solidaridad.' },
+            { img: '/images/proyecto-educativo/icono-3.png', titulo: 'Formación integral en valores', desc: 'Desarrollo del carácter y habilidades sociales a través de experiencias significativas diarias.' },
+            { img: '/images/proyecto-educativo/icono-6.png', titulo: 'Convivencia positiva', desc: 'Espacios seguros donde se practica el respeto y la empatía entre todos los miembros de la comunidad.' },
+            { img: '/images/proyecto-educativo/icono-4.png', titulo: 'Aprendizaje social activo', desc: 'Experiencias educativas diseñadas para fortalecer el compañerismo, la responsabilidad y la solidaridad.' },
           ].map(b => (
             <div class="proyecto__vbenefit">
-              <span class="proyecto__icono">{b.icono}</span>
+              <img class="proyecto__icono-img" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${b.img}`} alt={b.titulo} />
               <div>
                 <strong>{b.titulo}</strong>
                 <p>{b.desc}</p>
@@ -346,13 +348,13 @@ import Footer from '../components/Footer.astro';
       </div>
       <div class="salas__grid">
         {[
-          { nombre: 'Sala Encina',    ciclo: 'Sala Cuna',       color: 'var(--rosa)',    desc: 'Para los más pequeños. Cálida, segura, diseñada para la estimulación temprana.' },
-          { nombre: 'Sala Sauce',     ciclo: 'Sala Cuna / Medio', color: 'var(--azul)',  desc: 'Transición entre ciclos. Espacio de exploración y movimiento libre.' },
-          { nombre: 'Sala Álamo',     ciclo: 'Jardín Infantil', color: 'var(--verde)',   desc: 'Preescolar con enfoque en lenguaje, matemáticas y habilidades sociales.' },
-          { nombre: 'Sala Araucaria', ciclo: 'Transición',      color: 'var(--naranja)', desc: 'Preparación para el colegio con actividades desafiantes y autónomas.' },
+          { nombre: 'Sala Encina',    ciclo: 'Sala Cuna',         color: 'var(--rosa)',     img: '/images/infraestructura/encina.jpg',       desc: 'Para los más pequeños. Cálida, segura, diseñada para la estimulación temprana.' },
+          { nombre: 'Sala Encina',    ciclo: 'Sala Cuna / Medio', color: 'var(--azul)',    img: '/images/infraestructura/encina-1.jpg',     desc: 'Transición entre ciclos. Espacio de exploración y movimiento libre.' },
+          { nombre: 'Patio',          ciclo: 'Todos los ciclos',  color: 'var(--verde)',   img: '/images/infraestructura/fuerte-madera.jpg', desc: 'Patio con juegos y área verde. El espacio para correr, saltar y ser niño.' },
+          { nombre: 'Fachada',        ciclo: 'Av. Concón Reñaca 66', color: 'var(--naranja)', img: '/images/infraestructura/fachada.jpg',   desc: 'En el mismo lugar desde 1994. Una dirección que las familias conocen de generación en generación.' },
         ].map(s => (
           <div class="sala__card" style={`border-top: 5px solid ${s.color}`}>
-            <div class="sala__img-placeholder" aria-hidden="true">📷 {s.nombre}</div>
+            <img class="sala__img" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${s.img}`} alt={s.nombre} loading="lazy" />
             <div class="sala__info">
               <span class="sala__ciclo" style={`color: ${s.color}`}>{s.ciclo}</span>
               <h3>{s.nombre}</h3>
@@ -399,16 +401,12 @@ import Footer from '../components/Footer.astro';
     opacity: .75;
     max-width: 44ch;
   }
-  .page-hero__img-placeholder {
-    aspect-ratio: 4/3;
-    background: var(--crema);
-    border: 2px dashed var(--naranja);
+  .page-hero__img img {
+    width: 100%;
     border-radius: var(--radius);
-    display: grid;
-    place-items: center;
-    font-family: var(--font-mano);
-    color: var(--naranja);
-    opacity: .6;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+    aspect-ratio: 4/3;
   }
 
   /* Historia */
@@ -511,15 +509,12 @@ import Footer from '../components/Footer.astro';
     overflow: hidden;
     border: 1px solid rgba(255,247,232,.1);
   }
-  .sala__img-placeholder {
+  .sala__img {
+    width: 100%;
     aspect-ratio: 4/3;
-    background: rgba(255,247,232,.05);
+    object-fit: cover;
+    display: block;
     border-bottom: 1px solid rgba(255,247,232,.08);
-    display: grid;
-    place-items: center;
-    font-family: var(--font-mano);
-    font-size: .9rem;
-    color: rgba(255,247,232,.3);
   }
   .sala__info { padding: 1.25rem; }
   .sala__ciclo { font-size: .8rem; font-weight: 600; margin-bottom: .3rem; display: block; }
@@ -576,6 +571,12 @@ import Footer from '../components/Footer.astro';
     display: grid;
     place-items: center;
     font-size: 1rem;
+  }
+  .proyecto__icono-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .proyecto__valores {
