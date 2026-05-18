@@ -312,15 +312,13 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
-  /* ── Offset de nav ── */
-  .hero { padding-top: var(--nav-h); }
-
   /* ── HERO ── */
   .hero {
     background: var(--crema);
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    padding-top: var(--nav-h);
   }
   .hero__inner {
     display: grid;
