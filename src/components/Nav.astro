@@ -38,7 +38,7 @@ const pathname = Astro.url.pathname;
   </div>
 
   <!-- Menú móvil -->
-  <div class="nav__mobile" id="mobile-menu" hidden>
+  <div class="nav__mobile" id="mobile-menu">
     {links.map(l => (
       <a href={l.href} class="nav__mobile-link">{l.label}</a>
     ))}
@@ -51,10 +51,10 @@ const pathname = Astro.url.pathname;
   const menu   = document.getElementById('mobile-menu') as HTMLElement;
 
   burger?.addEventListener('click', () => {
-    const open = menu.hidden;
-    menu.hidden = !open;
-    burger.setAttribute('aria-expanded', String(open));
-    burger.classList.toggle('nav__burger--open', open);
+    const open = menu.classList.contains('nav__mobile--open');
+    menu.classList.toggle('nav__mobile--open', !open);
+    burger.setAttribute('aria-expanded', String(!open));
+    burger.classList.toggle('nav__burger--open', !open);
   });
 </script>
 
@@ -120,13 +120,20 @@ const pathname = Astro.url.pathname;
 
   .nav__mobile {
     background: var(--crema);
-    padding: 1rem 1.5rem 1.5rem;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-top: 1px solid var(--crema-2);
+    border-top: 0 solid var(--crema-2);
+    transition: max-height .25s ease, padding .25s ease;
   }
-  .nav__mobile[hidden] { display: none; }
+  .nav__mobile--open {
+    max-height: 400px;
+    padding: 1rem 1.5rem 1.5rem;
+    border-top-width: 1px;
+  }
   .nav__mobile-link {
     font-family: var(--font-titulo);
     font-size: 1.1rem;
