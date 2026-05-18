@@ -1,0 +1,217 @@
+# ─────────────────────────────────────────────
+# Decap CMS — config.yml
+# Rincón de Matías · rincondematias.cl
+# Ubicación en el proyecto: /public/admin/config.yml
+# ─────────────────────────────────────────────
+
+backend:
+  name: git-gateway          # Usa Netlify Identity (recomendado)
+  branch: main               # Rama de producción
+
+media_folder: "public/images/cms"       # Dónde se guardan las imágenes subidas
+public_folder: "/images/cms"            # URL pública de esas imágenes
+
+locale: es                              # Interfaz del CMS en español
+
+# ─────────────────────────────────────────────
+# COLECCIÓN 1 — Fotos de actividades
+# Genera una galería actualizable por el jardín.
+# Cada entrada = una sesión/actividad con sus fotos.
+# Ruta en el repo: src/content/actividades/
+# ─────────────────────────────────────────────
+collections:
+  - name: "actividades"
+    label: "Fotos de actividades"
+    label_singular: "Actividad"
+    folder: "src/content/actividades"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - label: "Título de la actividad"
+        name: title
+        widget: string
+        hint: "Ej: Taller de pintura, Día del niño, Salida al parque"
+
+      - label: "Fecha"
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Ciclo"
+        name: ciclo
+        widget: select
+        options:
+          - label: "Ambos ciclos"
+            value: todos
+          - label: "1er Ciclo (sala cuna)"
+            value: primer_ciclo
+          - label: "2do Ciclo (medio y transición)"
+            value: segundo_ciclo
+
+      - label: "Foto destacada"
+        name: imagen_portada
+        widget: image
+        hint: "Imagen principal que aparece en la grilla. Recomendado: horizontal, mín. 800px de ancho."
+
+      - label: "Galería de fotos"
+        name: galeria
+        widget: list
+        label_singular: "Foto"
+        min: 1
+        max: 20
+        field:
+          label: "Imagen"
+          name: imagen
+          widget: image
+
+      - label: "Descripción breve (opcional)"
+        name: descripcion
+        widget: text
+        required: false
+        hint: "Una o dos frases que aparecen como caption. Máx. 120 caracteres."
+
+      - label: "Visible en el sitio"
+        name: visible
+        widget: boolean
+        default: true
+        hint: "Desmarca para ocultar sin eliminar."
+
+# ─────────────────────────────────────────────
+# COLECCIÓN 2 — Testimonios de familias
+# Aparecen en la sección "Las familias hablan".
+# Ruta en el repo: src/content/testimonios/
+# ─────────────────────────────────────────────
+  - name: "testimonios"
+    label: "Testimonios"
+    label_singular: "Testimonio"
+    folder: "src/content/testimonios"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{autor}} — {{fecha}}"
+    fields:
+      - label: "Familia (nombre para mostrar)"
+        name: autor
+        widget: string
+        hint: "Ej: Familia Torres Valdivia"
+
+      - label: "Fecha o período"
+        name: fecha
+        widget: string
+        hint: "Ej: Febrero 2026 · Se muestra tal como lo escribas."
+
+      - label: "Testimonio"
+        name: texto
+        widget: text
+        hint: "Texto del testimonio. Entre 30 y 100 palabras es lo ideal."
+
+      - label: "Ciclo de su hijo/a"
+        name: ciclo
+        widget: select
+        required: false
+        hint: "Opcional. Permite filtrar si en el futuro se agrega esa función."
+        options:
+          - label: "1er Ciclo"
+            value: primer_ciclo
+          - label: "2do Ciclo"
+            value: segundo_ciclo
+
+      - label: "Mostrar en el sitio"
+        name: visible
+        widget: boolean
+        default: true
+        hint: "Desmarca para ocultar sin eliminar."
+
+# ─────────────────────────────────────────────
+# COLECCIÓN 3 — Sección "Para los papás"
+# Archivo único (singleton): edita el texto
+# y las 3 tarjetas de la sección clave.
+# Ruta en el repo: src/content/para-papas/index.json
+# ─────────────────────────────────────────────
+  - name: "para_papas"
+    label: "Sección: Para los papás"
+    files:
+      - label: "Contenido de la sección"
+        name: "para_papas_content"
+        file: "src/content/para-papas/index.json"
+        fields:
+          - label: "Título principal"
+            name: titulo
+            widget: string
+            hint: "Ej: Un jardín que entiende a las familias de hoy"
+
+          - label: "Párrafo de introducción"
+            name: descripcion
+            widget: text
+            hint: "El párrafo que aparece bajo el título. Máx. 3 oraciones."
+
+          - label: "Tarjetas (máx. 3)"
+            name: tarjetas
+            widget: list
+            max: 3
+            min: 3
+            summary: "{{fields.titulo}}"
+            fields:
+              - label: "Ícono (emoji)"
+                name: icono
+                widget: string
+                hint: "Un solo emoji. Ej: ⏰ 💛 🤝"
+
+              - label: "Título de la tarjeta"
+                name: titulo
+                widget: string
+
+              - label: "Descripción de la tarjeta"
+                name: descripcion
+                widget: text
+                hint: "2 a 3 oraciones breves."
+
+# ─────────────────────────────────────────────
+# COLECCIÓN 4 — Novedades
+# Módulo de noticias / entradas breves.
+# Aparece como sección "Últimas novedades" en el home
+# o como página /novedades.
+# Ruta en el repo: src/content/novedades/
+# ─────────────────────────────────────────────
+  - name: "novedades"
+    label: "Novedades"
+    label_singular: "Novedad"
+    folder: "src/content/novedades"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - label: "Título"
+        name: title
+        widget: string
+
+      - label: "Fecha"
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Resumen"
+        name: resumen
+        widget: string
+        hint: "Una línea que aparece en la tarjeta del listado. Máx. 120 caracteres."
+
+      - label: "Imagen de portada"
+        name: imagen
+        widget: image
+        required: false
+
+      - label: "Contenido"
+        name: body
+        widget: markdown
+        hint: "El texto completo de la novedad. Puedes usar negrita, listas y links."
+
+      - label: "Publicado"
+        name: publicado
+        widget: boolean
+        default: false
+        hint: "Activa cuando esté lista para publicar. Mientras no, queda como borrador."

@@ -1,0 +1,752 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Jardín Infantil en Concón"
+  description="Rincón de Matías: jardín infantil en Concón con 30 años de historia. Sala Cuna (3 meses–2 años) y Jardín Infantil (2–6 años). Jornada extendida y horarios flexibles para las familias de hoy."
+>
+  <Nav slot="nav" />
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero__inner container">
+      <div class="hero__copy">
+        <span class="hero__eyebrow">Concón · 30 años cuidando lo que importa</span>
+        <h1 class="hero__h1">
+          Para los niños<br/>
+          <em>y también</em><br/>
+          para los papás.
+        </h1>
+        <p class="hero__sub">
+          Un jardín que entiende que cuando los niños crecen felices,<br class="hero__br"/>
+          las familias también pueden crecer tranquilas.
+        </p>
+        <div class="hero__actions">
+          <a href="/contacto#agendar" class="btn btn--naranja">Agendar visita →</a>
+          <a href="/ciclos" class="btn btn--outline">Ver ciclos</a>
+        </div>
+        <div class="hero__datos">
+          <div class="hero__dato">
+            <strong>Sala Cuna</strong>
+            <span>3 meses – 2 años</span>
+          </div>
+          <div class="hero__sep"></div>
+          <div class="hero__dato">
+            <strong>Jardín Infantil</strong>
+            <span>2 – 6 años</span>
+          </div>
+          <div class="hero__sep"></div>
+          <div class="hero__dato">
+            <strong>7:30 – 18:00</strong>
+            <span>Jornada extendida</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__img-wrap">
+        <div class="hero__img-placeholder" aria-hidden="true">
+          <!-- Reemplazar con foto real del jardín -->
+          <span>📷 Foto real del jardín</span>
+        </div>
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LO QUE CONSERVAMOS ── -->
+  <section class="section section--crema2 conservamos">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">30 años de historia</span>
+        <h2 class="section__titulo">Lo que conservamos</h2>
+        <p class="section__subtitulo">Tres décadas enseñan qué cambiar y qué jamás tocar.</p>
+      </div>
+      <div class="conservamos__grid">
+        {[
+          { icono: '🏡', color: 'var(--naranja)', titulo: 'Espacios propios', desc: 'Cuatro salas con nombres de árboles nativos — Encina, Sauce, Álamo y Araucaria — diseñadas para explorar y jugar.' },
+          { icono: '🌿', color: 'var(--verde)',   titulo: 'Patios amplios', desc: 'Espacios verdes que invitan al movimiento libre, la aventura y el contacto con la naturaleza.' },
+          { icono: '👩‍🏫', color: 'var(--rosa)',    titulo: 'Equipo estable', desc: 'Educadoras y técnicos que conocen a cada niño por nombre, historia y carácter.' },
+          { icono: '🤝', color: 'var(--azul)',    titulo: 'Vínculo con las familias', desc: 'Comunicación directa, real y sin intermediarios. Siempre disponibles cuando la familia lo necesita.' },
+        ].map(c => (
+          <div class="conservamos__card">
+            <div class="conservamos__icono" style={`background: ${c.color}22`}>
+              <span style={`color: ${c.color}`}>{c.icono}</span>
+            </div>
+            <h3>{c.titulo}</h3>
+            <p>{c.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DOS HISTORIAS ── -->
+  <section class="section section--crema dual">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Un jardín, dos historias</span>
+        <h2 class="section__titulo">Lo que pasa adentro — y lo que pasa afuera</h2>
+        <p class="section__subtitulo">Cada día, dos experiencias distintas y complementarias.</p>
+      </div>
+
+      <div class="dual__grid">
+        <div class="dual__lane dual__lane--ninos">
+          <p class="dual__quien">Para los niños</p>
+          <h3>Un mundo listo para ser explorado</h3>
+          <div class="dual__img-placeholder" aria-hidden="true">📷 Foto sala o patio</div>
+          <ul class="dual__lista">
+            {[
+              ['🎨', 'Experiencias de aprendizaje', 'Cada actividad tiene un propósito educativo pensado para su edad y etapa.'],
+              ['🤸', 'Movimiento libre', 'Patios y espacios diseñados para correr, saltar, descubrir.'],
+              ['🌱', 'Rutinas que dan seguridad', 'Los niños saben qué viene después. Eso los tranquiliza y los hace crecer.'],
+              ['👫', 'Vínculos con sus pares', 'Aprenden a compartir, esperar, colaborar y resolver.'],
+            ].map(([emoji, titulo, desc]) => (
+              <li>
+                <span class="dual__ck dual__ck--ninos">{emoji}</span>
+                <div><b>{titulo}</b><span>{desc}</span></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="dual__lane dual__lane--papas">
+          <p class="dual__quien dual__quien--papas">Para los papás</p>
+          <h3>Un jardín que se adapta a tu vida</h3>
+          <div class="dual__img-placeholder" aria-hidden="true">📷 Foto familia / entrada</div>
+          <ul class="dual__lista">
+            {[
+              ['⏰', 'Horarios de verdad', 'Lun–Jue 7:30–18:00 · Vie 7:30–17:30. Porque el trabajo no siempre termina a las 16:00.'],
+              ['💛', 'Prestaciones flexibles', 'Ajustamos el servicio a lo que tu familia necesita y puede. Sin un plan único.'],
+              ['📲', 'Comunicación directa', 'Sabes cómo está tu hijo. Siempre. Sin esperar informe.'],
+              ['📍', 'Dos accesos al jardín', 'Comodidad para quienes vienen desde distintos puntos de Concón y Reñaca.'],
+            ].map(([emoji, titulo, desc]) => (
+              <li>
+                <span class="dual__ck dual__ck--papas">{emoji}</span>
+                <div><b>{titulo}</b><span>{desc}</span></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section faq" style="background: linear-gradient(180deg, var(--amarillo) 0%, #F5D670 100%); color: var(--cafe)">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge" style="background: var(--cafe); color: var(--amarillo)">Preguntas reales</span>
+        <h2 class="section__titulo">Respondidas en serio</h2>
+        <p class="section__subtitulo">Lo que las familias preguntan antes de tomar la decisión.</p>
+      </div>
+
+      <div class="faq__grid">
+        {[
+          {
+            q: '¿Aceptan niños desde los 3 meses?',
+            a: 'Sí. Nuestra Sala Cuna recibe a bebés desde los 3 meses con estimulación temprana, rutinas de sueño y alimentación supervisada.',
+          },
+          {
+            q: '¿Qué pasa si necesito retirar a mi hijo antes o después del horario estándar?',
+            a: 'Podemos coordinar horarios de entrada y salida distintos según lo que tu familia necesite. Conversamos caso a caso.',
+          },
+          {
+            q: '¿Cómo funciona la matrícula?',
+            a: 'En 4 pasos: visita al jardín → revisión de cupos → llenado de ficha → confirmación. Todo en menos de una semana.',
+          },
+          {
+            q: '¿Tienen alimentación incluida?',
+            a: 'Sí. Desayuno, almuerzo y once están incluidos. Podemos adaptar el menú por alergias o restricciones alimentarias.',
+          },
+          {
+            q: '¿Puedo visitar el jardín antes de matricular?',
+            a: '¡Siempre! Te invitamos a conocer las salas, el equipo y los espacios antes de tomar la decisión.',
+          },
+          {
+            q: '¿Están acreditados?',
+            a: 'Sí. RBD 41528-6. Cumplimos con todos los estándares de la Junji y contamos con Plan de Seguridad (PISE) vigente.',
+          },
+        ].map(({ q, a }) => (
+          <div class="faq__card">
+            <p class="faq__q"><span class="faq__qmark">?</span>{q}</p>
+            <p class="faq__a" set:html={a} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UN DÍA EN RINCÓN ── -->
+  <section class="section section--crema dia">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">La rutina del jardín</span>
+        <h2 class="section__titulo">Un día en Rincón</h2>
+        <p class="section__subtitulo">Lo que vive tu hijo — y lo que vives tú — hora a hora.</p>
+      </div>
+
+      <div class="timeline">
+        {[
+          { hora: '7:30',  nino: { titulo: 'Llegada',         desc: 'Recepción personalizada. Cada niño llega a su espacio.' },    papa: { titulo: 'Entrega rápida',    desc: 'Sin apuro. Sabemos que tu día empieza aquí.' } },
+          { hora: '9:00',  nino: { titulo: 'Desayuno',        desc: 'Nutritivo y en calma. Buenos hábitos desde chicos.' },         papa: { titulo: 'Notificación',      desc: '¿Todo bien? Te avisamos si algo es distinto.' } },
+          { hora: '10:00', nino: { titulo: 'Actividad guiada',desc: 'Arte, música, lenguaje o exploración según la semana.' },       papa: { titulo: 'Tú en lo tuyo',     desc: 'Trabaja tranquilo. Aquí estamos.' } },
+          { hora: '12:00', nino: { titulo: 'Almuerzo',        desc: 'Menú balanceado. Aprendemos a comer juntos.' },                 papa: { titulo: 'Foto del día',      desc: 'A veces te mandamos una foto. Solo porque sí.' } },
+          { hora: '14:00', nino: { titulo: 'Siesta / juego',  desc: 'Descanso para los más pequeños. Juego libre para los grandes.' }, papa: { titulo: 'Todo tranquilo',   desc: 'La tarde avanza sin sorpresas.' } },
+          { hora: '18:00', nino: { titulo: 'Despedida',       desc: 'Con resumen del día. Qué hizo, cómo estuvo.' },                 papa: { titulo: 'Lo recoges',        desc: 'Fin del día. Los dos lo disfrutaron.' } },
+        ].map(({ hora, nino, papa }, i) => (
+          <div class={`timeline__moment ${i % 2 === 1 ? 'timeline__moment--swap' : ''}`}>
+            <div class="timeline__nino">
+              <p class="timeline__quien timeline__quien--nino">Para el niño</p>
+              <h4>{nino.titulo}</h4>
+              <p>{nino.desc}</p>
+            </div>
+            <div class="timeline__hora">
+              <div class="timeline__reloj">{hora}</div>
+            </div>
+            <div class="timeline__papa">
+              <p class="timeline__quien timeline__quien--papa">Para los papás</p>
+              <h4>{papa.titulo}</h4>
+              <p>{papa.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIOS ── -->
+  <section class="section voces" style="background: var(--verde); color: #fff">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge" style="background: #fff; color: var(--verde)">Las familias hablan</span>
+        <h2 class="section__titulo" style="color: #fff">Lo mejor que hacemos no lo inventamos nosotros</h2>
+      </div>
+
+      <div class="voces__grid">
+        {[
+          {
+            texto: 'Llevamos tres años con Rincón de Matías y no cambiaríamos nada. La comunicación es excelente y mi hija adora a sus educadoras. Nos adaptaron el horario en semanas difíciles sin ningún problema.',
+            familia: 'Familia Torres Valdivia',
+            periodo: 'Desde 2022',
+          },
+          {
+            texto: 'Lo que más valoramos es la flexibilidad real. No solo de palabra. Cuando tuvimos un cambio laboral complicado, el jardín nos apoyó ajustando la jornada sin drama.',
+            familia: 'Familia Morales Sepúlveda',
+            periodo: 'Desde 2023',
+          },
+          {
+            texto: 'Mi hijo entró a los 5 meses a Sala Cuna. Fue difícil dejarlo, pero en pocas semanas ya llegaba corriendo al jardín. Eso dice todo.',
+            familia: 'Familia Riquelme Fuentes',
+            periodo: 'Desde 2024',
+          },
+        ].map((v, i) => (
+          <div class={`voces__card voces__card--${i}`}>
+            <span class="voces__comilla" aria-hidden="true">"</span>
+            <p>{v.texto}</p>
+            <div>
+              <strong class="voces__familia">{v.familia}</strong>
+              <span class="voces__periodo">{v.periodo}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MATRÍCULA ── -->
+  <section class="section matricula" style="background: var(--rosa); color: #fff">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge" style="background: #fff; color: var(--rosa)">Matrícula</span>
+        <h2 class="section__titulo" style="color: #fff">En 4 pasos, tu hijo ya tiene su lugar</h2>
+        <p class="section__subtitulo" style="color: rgba(255,255,255,.85)">Sin burocracia, sin esperas innecesarias.</p>
+      </div>
+
+      <div class="matricula__steps">
+        {[
+          { n: '01', titulo: 'Visita el jardín',      desc: 'Conoces las salas, el equipo y te resolvemos todas las dudas.' },
+          { n: '02', titulo: 'Revisamos cupos',       desc: 'Verificamos disponibilidad para el ciclo y jornada que necesitas.' },
+          { n: '03', titulo: 'Completas la ficha',    desc: 'Documentación simple. Te orientamos en cada paso.' },
+          { n: '04', titulo: 'Confirmación',          desc: 'Tu hijo ya tiene su espacio. Te confirmamos por WhatsApp.' },
+        ].map(s => (
+          <div class="matricula__step">
+            <span class="matricula__num">{s.n}</span>
+            <h4>{s.titulo}</h4>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="matricula__cta">
+        <a href="/contacto#agendar" class="btn matricula__btn">
+          Agendar visita ahora →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACTO RÁPIDO ── -->
+  <section class="section section--cafe contacto-rapido">
+    <div class="container contacto-rapido__grid">
+      <div>
+        <h2 class="section__titulo" style="color: var(--crema)">¿Tienes dudas?<br/>Escríbenos.</h2>
+        <p class="section__subtitulo" style="opacity: .65">Respondemos en el día, siempre.</p>
+      </div>
+      <div class="contacto-rapido__datos">
+        <a href="https://wa.me/56XXXXXXXXX" class="btn btn--verde contacto-rapido__btn" target="_blank" rel="noopener">
+          💬 WhatsApp
+        </a>
+        <a href="tel:+56XXXXXXXXX" class="btn btn--amarillo contacto-rapido__btn">
+          📞 Llamar
+        </a>
+        <p style="color: rgba(255,247,232,.5); font-size: .85rem; margin-top: .5rem">Av. Concón Reñaca 66, Concón</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* ── Offset de nav ── */
+  .hero { padding-top: var(--nav-h); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--crema);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding-block: 5rem;
+  }
+  .hero__eyebrow {
+    display: inline-block;
+    font-family: var(--font-mano);
+    font-size: 1.1rem;
+    color: var(--naranja);
+    margin-bottom: .75rem;
+  }
+  .hero__h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .hero__h1 em {
+    font-style: normal;
+    font-family: var(--font-mano);
+    color: var(--rosa);
+    font-size: .9em;
+  }
+  .hero__sub {
+    font-size: 1.1rem;
+    opacity: .7;
+    max-width: 42ch;
+    margin-bottom: 2rem;
+  }
+  .hero__br { display: none; }
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .hero__datos {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .hero__dato strong {
+    display: block;
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    font-size: .95rem;
+  }
+  .hero__dato span {
+    font-size: .8rem;
+    opacity: .6;
+  }
+  .hero__sep {
+    width: 1px;
+    height: 32px;
+    background: currentColor;
+    opacity: .15;
+  }
+
+  .hero__img-wrap {
+    position: relative;
+  }
+  .hero__img-placeholder {
+    aspect-ratio: 4/3;
+    background: var(--crema-2);
+    border-radius: var(--radius);
+    border: 2px dashed var(--naranja);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mano);
+    font-size: 1.1rem;
+    color: var(--naranja);
+    opacity: .6;
+    position: relative;
+    z-index: 1;
+  }
+  .hero__blob {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .hero__blob--1 {
+    width: 220px; height: 220px;
+    background: var(--amarillo);
+    opacity: .35;
+    top: -40px; right: -40px;
+  }
+  .hero__blob--2 {
+    width: 140px; height: 140px;
+    background: var(--rosa);
+    opacity: .2;
+    bottom: -30px; left: -20px;
+  }
+
+  /* ── CONSERVAMOS ── */
+  .section__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .conservamos__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .conservamos__card {
+    background: var(--crema);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(42,31,24,.06);
+  }
+  .conservamos__icono {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .conservamos__card h3 {
+    font-size: 1.05rem;
+    margin-bottom: .5rem;
+  }
+  .conservamos__card p {
+    font-size: .9rem;
+    opacity: .7;
+    line-height: 1.5;
+  }
+
+  /* ── DOS HISTORIAS ── */
+  .dual__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .dual__lane {
+    background: var(--crema-2);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border-top: 6px solid transparent;
+    box-shadow: var(--shadow);
+  }
+  .dual__lane--ninos { border-top-color: var(--rosa); }
+  .dual__lane--papas { border-top-color: var(--azul); }
+  .dual__quien {
+    font-family: var(--font-mano);
+    font-size: 1.3rem;
+    margin-bottom: .25rem;
+  }
+  .dual__lane--ninos .dual__quien { color: var(--rosa); }
+  .dual__lane--papas .dual__quien { color: var(--azul); }
+  .dual__lane h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+    max-width: 22ch;
+  }
+  .dual__img-placeholder {
+    aspect-ratio: 16/9;
+    background: rgba(42,31,24,.07);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mano);
+    opacity: .5;
+    margin-bottom: 1.5rem;
+    font-size: .9rem;
+  }
+  .dual__lista {
+    list-style: none;
+  }
+  .dual__lista li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: .75rem;
+    padding: .75rem 0;
+    border-top: 1px dashed rgba(42,31,24,.1);
+    align-items: start;
+  }
+  .dual__lista li:first-child { border-top: 0; }
+  .dual__lista b { display: block; font-size: .95rem; margin-bottom: .15rem; }
+  .dual__lista span { font-size: .85rem; opacity: .65; }
+  .dual__ck {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+  }
+  .dual__ck--ninos { background: rgba(214,66,124,.12); }
+  .dual__ck--papas { background: rgba(79,141,209,.12); }
+
+  /* ── FAQ ── */
+  .faq__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .faq__card {
+    background: var(--crema);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.6rem;
+    border: 1px solid rgba(42,31,24,.1);
+    box-shadow: 0 4px 0 rgba(42,31,24,.06);
+  }
+  .faq__q {
+    font-family: var(--font-mano);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--rosa);
+    display: flex;
+    gap: .6rem;
+    align-items: baseline;
+    margin-bottom: .6rem;
+  }
+  .faq__qmark {
+    width: 26px; height: 26px;
+    background: var(--rosa);
+    color: #fff;
+    border-radius: 50%;
+    display: inline-grid;
+    place-items: center;
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    font-size: .85rem;
+    flex-shrink: 0;
+  }
+  .faq__a { font-size: .9rem; line-height: 1.6; }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: rgba(42,31,24,.1);
+    transform: translateX(-50%);
+  }
+  .timeline__moment {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .timeline__hora {
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .timeline__reloj {
+    width: 60px; height: 60px;
+    background: var(--cafe);
+    color: var(--crema);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    font-size: .85rem;
+    box-shadow: 0 0 0 6px var(--crema);
+  }
+  .timeline__nino { text-align: right; padding-right: 2rem; }
+  .timeline__papa { text-align: left; padding-left: 2rem; }
+  .timeline__moment--swap .timeline__nino {
+    order: 3;
+    text-align: left;
+    padding: 0 0 0 2rem;
+  }
+  .timeline__moment--swap .timeline__papa {
+    order: 1;
+    text-align: right;
+    padding: 0 2rem 0 0;
+  }
+  .timeline__quien {
+    font-family: var(--font-mano);
+    font-size: 1rem;
+    margin-bottom: .2rem;
+  }
+  .timeline__quien--nino { color: var(--rosa); }
+  .timeline__quien--papa { color: var(--azul); }
+  .timeline__moment h4 { font-size: 1rem; margin-bottom: .25rem; }
+  .timeline__moment p  { font-size: .85rem; opacity: .65; }
+
+  /* ── VOCES ── */
+  .voces__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .voces__card {
+    background: var(--crema);
+    color: var(--cafe);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.6rem;
+    position: relative;
+  }
+  .voces__card--1 { transform: rotate(1deg); margin-top: 1.5rem; }
+  .voces__card--2 { transform: rotate(-1.5deg); }
+  .voces__comilla {
+    position: absolute;
+    top: 14px; right: 18px;
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: var(--rosa);
+    line-height: .6;
+  }
+  .voces__card p {
+    font-size: .9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+  }
+  .voces__familia {
+    display: block;
+    font-family: var(--font-titulo);
+    font-size: .9rem;
+  }
+  .voces__periodo {
+    display: block;
+    font-size: .8rem;
+    opacity: .55;
+  }
+
+  /* ── MATRÍCULA ── */
+  .matricula__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .matricula__step {
+    background: #fff;
+    color: var(--cafe);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .matricula__num {
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--rosa);
+    display: block;
+    margin-bottom: .5rem;
+    line-height: 1;
+  }
+  .matricula__step h4 { font-size: 1rem; margin-bottom: .4rem; }
+  .matricula__step p  { font-size: .85rem; opacity: .65; }
+  .matricula__cta { text-align: center; }
+  .matricula__btn {
+    background: #fff;
+    color: var(--rosa);
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 24px rgba(42,31,24,.18);
+  }
+
+  /* ── CONTACTO RÁPIDO ── */
+  .contacto-rapido__grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .contacto-rapido__datos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .75rem;
+  }
+  .contacto-rapido__btn { min-width: 180px; justify-content: center; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero__inner,
+    .dual__grid,
+    .conservamos__grid {
+      grid-template-columns: 1fr;
+    }
+    .faq__grid,
+    .voces__grid,
+    .matricula__steps {
+      grid-template-columns: 1fr 1fr;
+    }
+    .timeline::before { left: 30px; }
+    .timeline__moment {
+      grid-template-columns: 60px 1fr;
+      gap: 1rem;
+    }
+    .timeline__nino,
+    .timeline__papa {
+      grid-column: 2;
+      text-align: left;
+      padding: 0;
+      margin-bottom: .5rem;
+    }
+    .timeline__moment--swap .timeline__nino,
+    .timeline__moment--swap .timeline__papa {
+      order: unset;
+      text-align: left;
+      padding: 0;
+    }
+    .timeline__hora { grid-row: 1; }
+    .contacto-rapido__datos { align-items: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    .faq__grid,
+    .voces__grid,
+    .matricula__steps {
+      grid-template-columns: 1fr;
+    }
+    .voces__card--1,
+    .voces__card--2 { transform: none; margin-top: 0; }
+    .hero__br { display: block; }
+  }
+</style>
