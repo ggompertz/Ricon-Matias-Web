@@ -1,0 +1,330 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Nosotros"
+  description="30 años cuidando niños en Concón. Conoce la historia, el equipo y los valores que hacen de Rincón de Matías un jardín infantil distinto."
+>
+  <Nav slot="nav" />
+
+  <!-- ── HERO ── -->
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div>
+        <span class="section__badge">Desde 1994</span>
+        <h1 class="page-hero__h1">Tres décadas cuidando lo que importa</h1>
+        <p class="page-hero__sub">
+          Rincón de Matías nació en Concón con una convicción simple: los niños crecen mejor
+          cuando sus familias están tranquilas. Eso no ha cambiado en 30 años.
+        </p>
+      </div>
+      <div class="page-hero__img-placeholder" aria-hidden="true">📷 Foto fachada / historia</div>
+    </div>
+  </section>
+
+  <!-- ── HISTORIA ── -->
+  <section class="section section--crema2">
+    <div class="container historia">
+      <div class="historia__texto">
+        <span class="section__badge">Nuestra historia</span>
+        <h2 class="section__titulo">Un jardín que creció con Concón</h2>
+        <p>
+          Abrimos nuestras puertas en 1994 en Av. Concón Reñaca 66, cuando Concón era una ciudad
+          distinta. Lo que no cambió es el barrio, la dirección y la convicción de que cada niño
+          merece un espacio propio para crecer.
+        </p>
+        <p>
+          A lo largo de los años incorporamos dos ciclos educativos — Sala Cuna y Jardín Infantil —
+          ampliamos los espacios, sumamos profesionales y ajustamos los horarios a la realidad
+          de las familias trabajadoras de hoy. Pero el espíritu del jardín sigue siendo el mismo.
+        </p>
+        <p>
+          Más de 30 generaciones de niños pasaron por nuestras salas.
+          Algunos ya traen a sus propios hijos.
+        </p>
+      </div>
+      <div class="historia__hitos">
+        {[
+          { año: '1994', hito: 'Apertura en Av. Concón Reñaca 66' },
+          { año: '2000', hito: 'Incorporación de Sala Cuna' },
+          { año: '2010', hito: 'Ampliación de salas y patios' },
+          { año: '2020', hito: 'Jornada extendida Lun–Jue hasta 18:00' },
+          { año: 'Hoy',  hito: '30 años · 2 ciclos · 4 salas · 2 accesos' },
+        ].map(h => (
+          <div class="historia__hito">
+            <span class="historia__año">{h.año}</span>
+            <span class="historia__linea"></span>
+            <p>{h.hito}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALORES ── -->
+  <section class="section section--crema">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Lo que nos guía</span>
+        <h2 class="section__titulo">Nuestros valores</h2>
+      </div>
+      <div class="valores__grid">
+        {[
+          { icono: '🌱', color: 'var(--verde)',   titulo: 'Respeto por los tiempos',     desc: 'Cada niño tiene su propio ritmo. No apuramos ni comparamos. Acompañamos.' },
+          { icono: '🤝', color: 'var(--azul)',    titulo: 'Alianza con las familias',    desc: 'El jardín y la familia son un equipo. La comunicación es constante y honesta.' },
+          { icono: '💛', color: 'var(--amarillo)', titulo: 'Calidez real',               desc: 'No es un slogan. Es la forma en que recibimos, cuidamos y despedimos cada día.' },
+          { icono: '🔍', color: 'var(--naranja)', titulo: 'Intención educativa',        desc: 'Cada actividad tiene un propósito. El juego es aprendizaje y lo sabemos.' },
+          { icono: '🏡', color: 'var(--rosa)',    titulo: 'Sentido de pertenencia',     desc: 'Los niños hacen suyo el espacio. Los papás sienten que llegaron al lugar correcto.' },
+          { icono: '⚖️', color: 'var(--cafe)',    titulo: 'Flexibilidad sin caos',      desc: 'Nos adaptamos a cada familia. Con estructura, sin rigidez.' },
+        ].map(v => (
+          <div class="valor__card">
+            <span class="valor__icono" style={`background: ${v.color}22; color: ${v.color}`}>{v.icono}</span>
+            <h3>{v.titulo}</h3>
+            <p>{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EQUIPO ── -->
+  <section class="section section--crema2">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Quiénes somos</span>
+        <h2 class="section__titulo">El equipo detrás del jardín</h2>
+        <p class="section__subtitulo">
+          Educadoras y técnicos que eligen este trabajo porque les importa, no porque les quedó cerca.
+        </p>
+      </div>
+      <div class="equipo__grid">
+        {[
+          { nombre: 'Directora', rol: 'Dirección', desc: 'Al frente del jardín hace más de 15 años. Conoce a cada familia por nombre.' },
+          { nombre: 'Educadora Sala Cuna', rol: 'Sala Cuna · 1er Ciclo', desc: 'Especialista en estimulación temprana. Referente para bebés de 3 meses a 2 años.' },
+          { nombre: 'Educadora Jardín', rol: 'Jardín · 2do Ciclo', desc: 'Prepara a los niños para el colegio con metodología lúdica y afectiva.' },
+          { nombre: 'Técnicos en Ed. Parvularia', rol: 'Apoyo en todos los ciclos', desc: 'Presentes en cada sala. La relación cotidiana con los niños pasa por ellos.' },
+        ].map(e => (
+          <div class="equipo__card">
+            <div class="equipo__foto-placeholder" aria-hidden="true">📷</div>
+            <div class="equipo__info">
+              <strong>{e.nombre}</strong>
+              <span class="equipo__rol">{e.rol}</span>
+              <p>{e.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="equipo__nota">
+        📷 <em>Las fotos del equipo serán incorporadas por el jardín antes del lanzamiento.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── ESPACIOS ── -->
+  <section class="section section--cafe">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge" style="background: var(--amarillo); color: var(--cafe)">Nuestros espacios</span>
+        <h2 class="section__titulo" style="color: var(--crema)">Cuatro salas. Un patio para cada historia.</h2>
+        <p class="section__subtitulo" style="color: rgba(255,247,232,.6)">
+          Cada sala tiene nombre propio. Igual que los niños que la habitan.
+        </p>
+      </div>
+      <div class="salas__grid">
+        {[
+          { nombre: 'Sala Encina',    ciclo: 'Sala Cuna',       color: 'var(--rosa)',    desc: 'Para los más pequeños. Cálida, segura, diseñada para la estimulación temprana.' },
+          { nombre: 'Sala Sauce',     ciclo: 'Sala Cuna / Medio', color: 'var(--azul)',  desc: 'Transición entre ciclos. Espacio de exploración y movimiento libre.' },
+          { nombre: 'Sala Álamo',     ciclo: 'Jardín Infantil', color: 'var(--verde)',   desc: 'Preescolar con enfoque en lenguaje, matemáticas y habilidades sociales.' },
+          { nombre: 'Sala Araucaria', ciclo: 'Transición',      color: 'var(--naranja)', desc: 'Preparación para el colegio con actividades desafiantes y autónomas.' },
+        ].map(s => (
+          <div class="sala__card" style={`border-top: 5px solid ${s.color}`}>
+            <div class="sala__img-placeholder" aria-hidden="true">📷 {s.nombre}</div>
+            <div class="sala__info">
+              <span class="sala__ciclo" style={`color: ${s.color}`}>{s.ciclo}</span>
+              <h3>{s.nombre}</h3>
+              <p>{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section section--crema" style="text-align:center">
+    <div class="container">
+      <h2 class="section__titulo">¿Quieres conocernos en persona?</h2>
+      <p class="section__subtitulo" style="margin: 0 auto 2rem">
+        Una visita de 30 minutos vale más que cualquier página web.
+      </p>
+      <a href="/contacto#agendar" class="btn btn--naranja">Agendar visita →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--crema-2);
+    padding-top: calc(var(--nav-h) + 4rem);
+    padding-bottom: 4rem;
+  }
+  .page-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .page-hero__h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: .75rem 0 1rem;
+  }
+  .page-hero__sub {
+    font-size: 1.05rem;
+    opacity: .75;
+    max-width: 44ch;
+  }
+  .page-hero__img-placeholder {
+    aspect-ratio: 4/3;
+    background: var(--crema);
+    border: 2px dashed var(--naranja);
+    border-radius: var(--radius);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mano);
+    color: var(--naranja);
+    opacity: .6;
+  }
+
+  /* Historia */
+  .historia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .historia__texto p {
+    margin-bottom: 1rem;
+    opacity: .8;
+    line-height: 1.7;
+  }
+  .historia__texto .section__badge { margin-bottom: .75rem; }
+  .historia__texto .section__titulo { margin-bottom: 1.25rem; }
+
+  .historia__hitos { display: flex; flex-direction: column; gap: 1rem; padding-top: .5rem; }
+  .historia__hito {
+    display: grid;
+    grid-template-columns: 56px 24px 1fr;
+    align-items: center;
+    gap: .5rem;
+  }
+  .historia__año {
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--naranja);
+    text-align: right;
+  }
+  .historia__linea {
+    width: 2px;
+    height: 100%;
+    min-height: 20px;
+    background: var(--naranja);
+    margin-inline: auto;
+  }
+  .historia__hito p { font-size: .95rem; opacity: .8; }
+
+  /* Valores */
+  .valores__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .valor__card {
+    background: var(--crema-2);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .valor__icono {
+    display: inline-grid;
+    place-items: center;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .valor__card h3 { font-size: 1rem; margin-bottom: .4rem; }
+  .valor__card p  { font-size: .875rem; opacity: .7; line-height: 1.55; }
+
+  /* Equipo */
+  .equipo__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .equipo__card {
+    background: var(--crema);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .equipo__foto-placeholder {
+    aspect-ratio: 1;
+    background: var(--crema-2);
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    border-bottom: 1px solid rgba(42,31,24,.06);
+  }
+  .equipo__info { padding: 1.25rem; }
+  .equipo__info strong { display: block; font-family: var(--font-titulo); font-size: 1rem; }
+  .equipo__rol { display: block; font-size: .8rem; color: var(--naranja); margin: .2rem 0 .6rem; }
+  .equipo__info p { font-size: .85rem; opacity: .7; line-height: 1.5; }
+  .equipo__nota { text-align: center; font-size: .85rem; opacity: .5; }
+
+  /* Salas */
+  .salas__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  .sala__card {
+    background: rgba(255,247,232,.07);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255,247,232,.1);
+  }
+  .sala__img-placeholder {
+    aspect-ratio: 4/3;
+    background: rgba(255,247,232,.05);
+    border-bottom: 1px solid rgba(255,247,232,.08);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mano);
+    font-size: .9rem;
+    color: rgba(255,247,232,.3);
+  }
+  .sala__info { padding: 1.25rem; }
+  .sala__ciclo { font-size: .8rem; font-weight: 600; margin-bottom: .3rem; display: block; }
+  .sala__info h3 { font-size: 1rem; color: var(--crema); margin-bottom: .4rem; }
+  .sala__info p  { font-size: .85rem; color: rgba(255,247,232,.6); line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .page-hero__inner,
+    .historia { grid-template-columns: 1fr; }
+    .valores__grid,
+    .equipo__grid,
+    .salas__grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .valores__grid,
+    .equipo__grid,
+    .salas__grid { grid-template-columns: 1fr; }
+  }
+</style>

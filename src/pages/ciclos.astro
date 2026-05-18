@@ -1,0 +1,397 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Ciclos educativos"
+  description="Sala Cuna para bebés de 3 meses a 2 años y Jardín Infantil de 2 a 6 años. Conoce lo que hacemos en cada etapa y cómo acompañamos el desarrollo de tu hijo."
+>
+  <Nav slot="nav" />
+
+  <!-- ── HERO ── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__badge">Sala Cuna · Jardín Infantil</span>
+      <h1 class="page-hero__h1">Cada etapa, una experiencia distinta</h1>
+      <p class="page-hero__sub">
+        Desde los 3 meses hasta los 6 años. Dos ciclos con metodologías propias,
+        diseñadas para lo que cada edad necesita.
+      </p>
+      <div class="ciclos-tabs">
+        <a href="#sala-cuna" class="ciclos-tab ciclos-tab--rosa">🍼 Sala Cuna</a>
+        <a href="#jardin" class="ciclos-tab ciclos-tab--verde">🌿 Jardín Infantil</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SALA CUNA ── -->
+  <section class="section section--crema" id="sala-cuna">
+    <div class="container">
+      <div class="ciclo__header ciclo__header--rosa">
+        <div>
+          <span class="ciclo__badge ciclo__badge--rosa">1er Ciclo</span>
+          <h2 class="ciclo__titulo">Sala Cuna</h2>
+          <p class="ciclo__rango">3 meses — 2 años</p>
+          <p class="ciclo__intro">
+            El primer año de vida es el más importante para el desarrollo del cerebro.
+            Nuestra Sala Cuna está diseñada para acompañar ese proceso con cuidado,
+            estimulación y mucho afecto.
+          </p>
+        </div>
+        <div class="ciclo__img-placeholder ciclo__img-placeholder--rosa" aria-hidden="true">
+          📷 Foto Sala Cuna
+        </div>
+      </div>
+
+      <div class="ciclo__grid">
+        <div class="ciclo__bloque">
+          <h3>¿Qué hacemos?</h3>
+          <ul class="ciclo__lista">
+            {[
+              ['🧠', 'Estimulación temprana', 'Actividades sensoriales que favorecen el desarrollo cognitivo y motor.'],
+              ['😴', 'Rutinas de sueño', 'Acompañamos el descanso con técnicas apropiadas para cada bebé.'],
+              ['🍼', 'Alimentación supervisada', 'Seguimos el plan de alimentación de cada familia. Informamos siempre.'],
+              ['🎵', 'Música y movimiento', 'Canciones, masajes y juegos que estimulan los sentidos desde temprano.'],
+              ['🤗', 'Vínculo afectivo', 'Una educadora de referencia por sala para que el bebé sienta seguridad.'],
+            ].map(([emoji, titulo, desc]) => (
+              <li>
+                <span class="ciclo__emoji ciclo__emoji--rosa">{emoji}</span>
+                <div><b>{titulo}</b><span>{desc}</span></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="ciclo__bloque">
+          <h3>Lo que los papás valoran</h3>
+          <div class="ciclo__papas">
+            {[
+              { icono: '📲', titulo: 'Fotos durante el día', desc: 'Te enviamos fotos y actualizaciones para que estés tranquilo mientras trabajas.' },
+              { icono: '📋', titulo: 'Informe diario', desc: 'Al momento del retiro, sabes cómo comió, durmió y jugó tu hijo.' },
+              { icono: '⏰', titulo: 'Flexibilidad de horario', desc: 'Si llegás antes o después, coordinamos. El jardín se adapta a tu día.' },
+              { icono: '🤝', titulo: 'Comunicación directa', desc: 'Cualquier duda, llamás. Sin intermediarios, sin formularios.' },
+            ].map(p => (
+              <div class="ciclo__papa-card">
+                <span class="ciclo__papa-icono">{p.icono}</span>
+                <div>
+                  <strong>{p.titulo}</strong>
+                  <p>{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="ciclo__salas">
+        <h3>Salas del ciclo</h3>
+        <div class="ciclo__salas-grid">
+          <div class="ciclo__sala" style="border-color: var(--rosa)">
+            <strong>Sala Encina</strong>
+            <span>3 – 12 meses</span>
+            <p>Espacio cálido y seguro para los más pequeños. Diseño de nivel del suelo para gatear y explorar.</p>
+          </div>
+          <div class="ciclo__sala" style="border-color: var(--azul)">
+            <strong>Sala Sauce</strong>
+            <span>1 – 2 años</span>
+            <p>Para los que ya caminan y descubren. Más movimiento, más autonomía, más curiosidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JARDÍN INFANTIL ── -->
+  <section class="section section--crema2" id="jardin">
+    <div class="container">
+      <div class="ciclo__header ciclo__header--verde">
+        <div>
+          <span class="ciclo__badge ciclo__badge--verde">2do Ciclo</span>
+          <h2 class="ciclo__titulo">Jardín Infantil</h2>
+          <p class="ciclo__rango">2 — 6 años</p>
+          <p class="ciclo__intro">
+            La etapa donde los niños aprenden a ser niños. Jugando, preguntando, equivocándose
+            y volviéndolo a intentar. Aquí preparamos para el colegio y, sobre todo, para la vida.
+          </p>
+        </div>
+        <div class="ciclo__img-placeholder ciclo__img-placeholder--verde" aria-hidden="true">
+          📷 Foto Jardín Infantil
+        </div>
+      </div>
+
+      <div class="ciclo__grid">
+        <div class="ciclo__bloque">
+          <h3>¿Qué hacemos?</h3>
+          <ul class="ciclo__lista">
+            {[
+              ['🎨', 'Experiencias de aprendizaje', 'Arte, ciencias, lenguaje y matemáticas integrados en el juego.'],
+              ['📚', 'Pre-lectura y pre-escritura', 'Preparación para el colegio sin presión. Cada niño a su ritmo.'],
+              ['🤸', 'Educación física', 'Movimiento, coordinación y conciencia corporal en los patios.'],
+              ['🌍', 'Valores y ciudadanía', 'Compartir, respetar, colaborar. Habilidades para la vida.'],
+              ['🧩', 'Resolución de problemas', 'Actividades que desafían y generan pensamiento creativo.'],
+            ].map(([emoji, titulo, desc]) => (
+              <li>
+                <span class="ciclo__emoji ciclo__emoji--verde">{emoji}</span>
+                <div><b>{titulo}</b><span>{desc}</span></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="ciclo__bloque">
+          <h3>Niveles del ciclo</h3>
+          <div class="niveles">
+            {[
+              { nivel: 'Nivel Medio Menor', edad: '2 – 3 años', sala: 'Sala Sauce / Álamo', color: 'var(--verde)' },
+              { nivel: 'Nivel Medio Mayor', edad: '3 – 4 años', sala: 'Sala Álamo',         color: 'var(--naranja)' },
+              { nivel: 'Primer Nivel Transición', edad: '4 – 5 años', sala: 'Sala Araucaria', color: 'var(--rosa)' },
+              { nivel: 'Segundo Nivel Transición (NT2 / Kínder)', edad: '5 – 6 años', sala: 'Sala Araucaria', color: 'var(--azul)' },
+            ].map(n => (
+              <div class="nivel__card" style={`border-left: 4px solid ${n.color}`}>
+                <strong style={`color: ${n.color}`}>{n.nivel}</strong>
+                <span class="nivel__edad">{n.edad}</span>
+                <span class="nivel__sala">📍 {n.sala}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HORARIOS ── -->
+  <section class="section section--cafe">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge" style="background: var(--amarillo); color: var(--cafe)">Horarios</span>
+        <h2 class="section__titulo" style="color: var(--crema)">Jornada extendida para familias reales</h2>
+        <p class="section__subtitulo" style="color: rgba(255,247,232,.6)">
+          Porque el trabajo no siempre termina a las 16:00.
+        </p>
+      </div>
+      <div class="horarios__grid">
+        <div class="horario__card">
+          <h3>Lunes a Jueves</h3>
+          <p class="horario__hora">7:30 — 18:00</p>
+          <span>Jornada completa</span>
+        </div>
+        <div class="horario__card">
+          <h3>Viernes</h3>
+          <p class="horario__hora">7:30 — 17:30</p>
+          <span>Media hora antes</span>
+        </div>
+        <div class="horario__card horario__card--highlight">
+          <h3>Horario flexible</h3>
+          <p class="horario__hora" style="font-size: 1.2rem">A coordinar</p>
+          <span>Hablemos si necesitás algo distinto</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section section--crema" style="text-align: center">
+    <div class="container">
+      <h2 class="section__titulo">¿En qué ciclo está tu hijo?</h2>
+      <p class="section__subtitulo" style="margin: 0 auto 2rem">
+        Agendá una visita y te mostramos el espacio que le corresponde.
+      </p>
+      <a href="/contacto#agendar" class="btn btn--naranja">Agendar visita →</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--crema) 60%, var(--crema-2) 100%);
+    padding-top: calc(var(--nav-h) + 4rem);
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+  .page-hero__h1 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin: .75rem 0 1rem;
+  }
+  .page-hero__sub {
+    font-size: 1.05rem;
+    opacity: .75;
+    max-width: 52ch;
+    margin: 0 auto 2rem;
+  }
+  .ciclos-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .ciclos-tab {
+    padding: .75rem 1.75rem;
+    border-radius: 999px;
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .ciclos-tab:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .ciclos-tab--rosa  { background: var(--rosa);  color: #fff; }
+  .ciclos-tab--verde { background: var(--verde); color: #fff; }
+
+  /* Ciclo header */
+  .ciclo__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .ciclo__badge {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: .3rem .9rem;
+    border-radius: 999px;
+    margin-bottom: .5rem;
+  }
+  .ciclo__badge--rosa  { background: rgba(214,66,124,.15); color: var(--rosa); }
+  .ciclo__badge--verde { background: rgba(122,174,84,.15);  color: var(--verde); }
+  .ciclo__titulo { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin-bottom: .25rem; }
+  .ciclo__rango  { font-family: var(--font-mano); font-size: 1.3rem; color: var(--naranja); margin-bottom: 1rem; }
+  .ciclo__intro  { font-size: 1rem; opacity: .75; line-height: 1.7; max-width: 44ch; }
+
+  .ciclo__img-placeholder {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mano);
+    border: 2px dashed;
+    opacity: .5;
+  }
+  .ciclo__img-placeholder--rosa  { border-color: var(--rosa);  color: var(--rosa);  background: rgba(214,66,124,.05); }
+  .ciclo__img-placeholder--verde { border-color: var(--verde); color: var(--verde); background: rgba(122,174,84,.05); }
+
+  /* Grid de bloques */
+  .ciclo__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .ciclo__bloque h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--crema-2);
+  }
+
+  /* Lista de actividades */
+  .ciclo__lista { list-style: none; }
+  .ciclo__lista li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: .75rem;
+    padding: .75rem 0;
+    border-top: 1px dashed rgba(42,31,24,.1);
+    align-items: start;
+  }
+  .ciclo__lista li:first-child { border-top: 0; }
+  .ciclo__lista b  { display: block; font-size: .95rem; margin-bottom: .1rem; }
+  .ciclo__lista span { font-size: .85rem; opacity: .65; }
+  .ciclo__emoji {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+  }
+  .ciclo__emoji--rosa  { background: rgba(214,66,124,.12); }
+  .ciclo__emoji--verde { background: rgba(122,174,84,.12); }
+
+  /* Para los papás */
+  .ciclo__papas { display: flex; flex-direction: column; gap: 1rem; }
+  .ciclo__papa-card {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: .75rem;
+    align-items: start;
+    background: var(--crema-2);
+    border-radius: 10px;
+    padding: .9rem 1rem;
+  }
+  .ciclo__papa-icono {
+    width: 36px; height: 36px;
+    background: var(--crema);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+  }
+  .ciclo__papa-card strong { display: block; font-size: .9rem; margin-bottom: .2rem; }
+  .ciclo__papa-card p { font-size: .82rem; opacity: .65; margin: 0; }
+
+  /* Salas */
+  .ciclo__salas h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+  .ciclo__salas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .ciclo__sala {
+    border: 2px solid;
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    background: var(--crema-2);
+  }
+  .ciclo__sala strong { display: block; font-family: var(--font-titulo); font-size: 1.05rem; margin-bottom: .15rem; }
+  .ciclo__sala span   { display: block; font-family: var(--font-mano); font-size: 1rem; opacity: .6; margin-bottom: .5rem; }
+  .ciclo__sala p      { font-size: .875rem; opacity: .7; margin: 0; }
+
+  /* Niveles */
+  .niveles { display: flex; flex-direction: column; gap: .75rem; }
+  .nivel__card {
+    background: var(--crema);
+    border-radius: 10px;
+    padding: .9rem 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .nivel__card strong { display: block; font-size: .95rem; margin-bottom: .2rem; }
+  .nivel__edad, .nivel__sala {
+    display: block;
+    font-size: .82rem;
+    opacity: .6;
+  }
+
+  /* Horarios */
+  .horarios__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .horario__card {
+    background: rgba(255,247,232,.07);
+    border: 1px solid rgba(255,247,232,.12);
+    border-radius: var(--radius);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: var(--crema);
+  }
+  .horario__card h3   { font-size: 1rem; margin-bottom: .5rem; color: var(--amarillo); }
+  .horario__hora      { font-family: var(--font-titulo); font-size: 1.8rem; margin-bottom: .25rem; }
+  .horario__card span { font-size: .85rem; opacity: .55; }
+  .horario__card--highlight {
+    background: rgba(240,201,71,.15);
+    border-color: var(--amarillo);
+  }
+
+  @media (max-width: 900px) {
+    .ciclo__header,
+    .ciclo__grid,
+    .ciclo__salas-grid,
+    .horarios__grid { grid-template-columns: 1fr; }
+  }
+</style>

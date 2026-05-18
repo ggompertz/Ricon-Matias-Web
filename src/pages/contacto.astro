@@ -1,0 +1,366 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contacto"
+  description="Agendá una visita a Rincón de Matías en Concón. Av. Concón Reñaca 66. Dos accesos. Contacto directo por WhatsApp, teléfono o email."
+>
+  <Nav slot="nav" />
+
+  <!-- ── HERO ── -->
+  <section class="page-hero">
+    <div class="container" style="text-align: center">
+      <span class="section__badge">Estamos cerca</span>
+      <h1 class="page-hero__h1">¿Hablamos?</h1>
+      <p class="page-hero__sub">
+        La mejor forma de conocer Rincón de Matías es venir a verlo.
+        Agendá una visita o escribinos por WhatsApp — respondemos en el día.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── CANALES DE CONTACTO ── -->
+  <section class="section section--crema2">
+    <div class="container canales__grid">
+      <a href="https://wa.me/56XXXXXXXXX" class="canal__card canal__card--wa" target="_blank" rel="noopener">
+        <span class="canal__icono">💬</span>
+        <strong>WhatsApp</strong>
+        <p>La forma más rápida. Respondemos en minutos durante el horario del jardín.</p>
+        <span class="canal__cta">Abrir chat →</span>
+      </a>
+
+      <a href="tel:+56XXXXXXXXX" class="canal__card canal__card--tel">
+        <span class="canal__icono">📞</span>
+        <strong>Teléfono</strong>
+        <p>Llamanos directamente. Lun–Jue 8:00–17:30 · Vie 8:00–17:00.</p>
+        <span class="canal__cta">+56 X XXXX XXXX</span>
+      </a>
+
+      <a href="mailto:rincondematias@gmail.com" class="canal__card canal__card--mail">
+        <span class="canal__icono">📧</span>
+        <strong>Email</strong>
+        <p>Para consultas más detalladas o adjuntar documentos.</p>
+        <span class="canal__cta">rincondematias@gmail.com</span>
+      </a>
+
+      <a href="https://instagram.com/rincondematias" class="canal__card canal__card--ig" target="_blank" rel="noopener">
+        <span class="canal__icono">📸</span>
+        <strong>Instagram</strong>
+        <p>Seguinos para ver el día a día del jardín, actividades y novedades.</p>
+        <span class="canal__cta">@rincondematias →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── AGENDAR VISITA ── -->
+  <section class="section section--crema" id="agendar">
+    <div class="container agendar__grid">
+      <div class="agendar__copy">
+        <span class="section__badge">Agendar visita</span>
+        <h2 class="section__titulo">Vení a conocernos</h2>
+        <p>
+          Una visita de 30 minutos es suficiente para que te lleves la respuesta
+          a todas tus preguntas. Te mostramos las salas, te presentamos al equipo
+          y conversamos sobre lo que tu familia necesita.
+        </p>
+        <ul class="agendar__lista">
+          <li>✓ Sin costo ni compromiso</li>
+          <li>✓ Podés traer a tu hijo/a</li>
+          <li>✓ Confirmamos disponibilidad de cupos en el momento</li>
+          <li>✓ Te explicamos el proceso de matrícula paso a paso</li>
+        </ul>
+        <p class="agendar__horario">
+          <strong>Horario de visitas:</strong><br/>
+          Lunes a Viernes · 9:00 – 11:30 y 14:00 – 16:30<br/>
+          <em>Con cita previa</em>
+        </p>
+      </div>
+
+      <form class="agendar__form" name="visita" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="visita" />
+        <p style="display:none"><input name="bot-field" /></p>
+
+        <div class="form__grupo">
+          <label for="nombre">Nombre de la familia</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Familia García López" required />
+        </div>
+
+        <div class="form__grupo">
+          <label for="telefono">Teléfono o WhatsApp</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX" required />
+        </div>
+
+        <div class="form__grupo">
+          <label for="email">Email (opcional)</label>
+          <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" />
+        </div>
+
+        <div class="form__grupo">
+          <label for="ciclo">¿En qué ciclo estaría su hijo/a?</label>
+          <select id="ciclo" name="ciclo">
+            <option value="">Seleccionar...</option>
+            <option value="sala-cuna">Sala Cuna (3 meses – 2 años)</option>
+            <option value="jardin">Jardín Infantil (2 – 6 años)</option>
+            <option value="no-se">No sé todavía</option>
+          </select>
+        </div>
+
+        <div class="form__grupo">
+          <label for="mensaje">¿Alguna consulta o preferencia de horario?</label>
+          <textarea id="mensaje" name="mensaje" rows="3" placeholder="Ej: preferimos visitar en la mañana, tenemos una consulta sobre..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--naranja form__submit">
+          Solicitar visita →
+        </button>
+
+        <p class="form__nota">
+          Te contactamos dentro del día hábil para confirmar fecha y hora.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── CÓMO LLEGAR ── -->
+  <section class="section section--cafe">
+    <div class="container llegar__grid">
+      <div class="llegar__info">
+        <span class="section__badge" style="background: var(--amarillo); color: var(--cafe)">Cómo llegar</span>
+        <h2 class="section__titulo" style="color: var(--crema)">Av. Concón Reñaca 66, Concón</h2>
+        <p style="color: rgba(255,247,232,.7); margin-bottom: 2rem">
+          Dos accesos al jardín para tu comodidad,
+          según vengas desde Concón centro o desde Reñaca.
+        </p>
+
+        <div class="llegar__datos">
+          <div class="llegar__fila">
+            <span class="llegar__icono">📍</span>
+            <div>
+              <strong>Dirección</strong>
+              <span>Av. Concón Reñaca 66, Concón, V Región</span>
+            </div>
+          </div>
+          <div class="llegar__fila">
+            <span class="llegar__icono">🕐</span>
+            <div>
+              <strong>Horario</strong>
+              <span>Lun–Jue 7:30–18:00 · Vie 7:30–17:30</span>
+            </div>
+          </div>
+          <div class="llegar__fila">
+            <span class="llegar__icono">🚗</span>
+            <div>
+              <strong>Estacionamiento</strong>
+              <span>En la vía y acceso lateral disponible</span>
+            </div>
+          </div>
+          <div class="llegar__fila">
+            <span class="llegar__icono">🚌</span>
+            <div>
+              <strong>Locomoción</strong>
+              <span>Líneas que pasan por Av. Concón Reñaca</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://maps.google.com/?q=Av.+Concón+Reñaca+66,+Concón"
+          class="btn btn--amarillo"
+          target="_blank"
+          rel="noopener"
+          style="margin-top: 2rem"
+        >
+          Abrir en Google Maps →
+        </a>
+      </div>
+
+      <div class="mapa__embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3341.5!2d-71.5300!3d-32.9100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAv.+Conc%C3%B3n+Re%C3%B1aca+66%2C+Conc%C3%B3n!5e0!3m2!1ses!2scl!4v1234567890"
+          width="100%"
+          height="100%"
+          style="border:0; border-radius: var(--radius);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa Rincón de Matías"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--crema-2);
+    padding-top: calc(var(--nav-h) + 4rem);
+    padding-bottom: 4rem;
+  }
+  .page-hero__h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: .75rem 0 1rem;
+  }
+  .page-hero__sub {
+    font-size: 1.05rem;
+    opacity: .75;
+    max-width: 54ch;
+    margin: 0 auto;
+  }
+
+  /* Canales */
+  .canales__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  .canal__card {
+    background: var(--crema);
+    border-radius: var(--radius);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+    text-decoration: none;
+    color: var(--cafe);
+    border-top: 4px solid transparent;
+  }
+  .canal__card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(42,31,24,.14); }
+  .canal__card--wa   { border-top-color: #25D366; }
+  .canal__card--tel  { border-top-color: var(--azul); }
+  .canal__card--mail { border-top-color: var(--naranja); }
+  .canal__card--ig   { border-top-color: var(--rosa); }
+  .canal__icono { font-size: 2rem; }
+  .canal__card strong { font-family: var(--font-titulo); font-size: 1.05rem; }
+  .canal__card p { font-size: .875rem; opacity: .7; line-height: 1.5; flex: 1; }
+  .canal__cta { font-size: .85rem; font-weight: 700; color: var(--naranja); }
+
+  /* Agendar */
+  .agendar__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .agendar__copy p {
+    font-size: 1rem;
+    opacity: .75;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .agendar__copy .section__badge { margin-bottom: .75rem; }
+  .agendar__copy .section__titulo { margin-bottom: 1rem; }
+  .agendar__lista {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+  .agendar__lista li {
+    font-size: .9rem;
+    padding: .3rem 0;
+    opacity: .75;
+  }
+  .agendar__horario {
+    font-size: .9rem;
+    background: var(--crema-2);
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    line-height: 1.6;
+    border-left: 3px solid var(--naranja);
+  }
+
+  /* Formulario */
+  .agendar__form {
+    background: var(--crema-2);
+    border-radius: var(--radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    box-shadow: var(--shadow);
+  }
+  .form__grupo {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+  .form__grupo label {
+    font-size: .85rem;
+    font-weight: 600;
+    opacity: .75;
+  }
+  .form__grupo input,
+  .form__grupo select,
+  .form__grupo textarea {
+    background: var(--crema);
+    border: 1.5px solid rgba(42,31,24,.15);
+    border-radius: 8px;
+    padding: .7rem .9rem;
+    font-family: var(--font-cuerpo);
+    font-size: .95rem;
+    color: var(--cafe);
+    transition: border-color .15s;
+    resize: vertical;
+  }
+  .form__grupo input:focus,
+  .form__grupo select:focus,
+  .form__grupo textarea:focus {
+    outline: none;
+    border-color: var(--naranja);
+  }
+  .form__grupo input::placeholder,
+  .form__grupo textarea::placeholder { opacity: .45; }
+  .form__submit { align-self: flex-start; }
+  .form__nota {
+    font-size: .8rem;
+    opacity: .5;
+    line-height: 1.5;
+  }
+
+  /* Cómo llegar */
+  .llegar__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .llegar__datos { display: flex; flex-direction: column; gap: 1rem; }
+  .llegar__fila {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: .75rem;
+    align-items: start;
+  }
+  .llegar__icono {
+    width: 32px; height: 32px;
+    background: rgba(255,247,232,.1);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+  }
+  .llegar__fila strong { display: block; color: var(--crema); font-size: .9rem; margin-bottom: .1rem; }
+  .llegar__fila span   { font-size: .85rem; color: rgba(255,247,232,.6); }
+
+  .mapa__embed {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: rgba(255,247,232,.05);
+  }
+  .mapa__embed iframe { width: 100%; height: 100%; }
+
+  @media (max-width: 900px) {
+    .canales__grid { grid-template-columns: 1fr 1fr; }
+    .agendar__grid,
+    .llegar__grid  { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .canales__grid { grid-template-columns: 1fr; }
+  }
+</style>
