@@ -90,6 +90,217 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <!-- ── PROYECTO EDUCATIVO ── -->
+  <section class="section section--crema">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Nuestro proyecto educativo</span>
+        <h2 class="section__titulo">Orientando aprendizajes</h2>
+      </div>
+
+      <div class="proyecto__grid">
+        <div class="proyecto__proposito">
+          <h3>Propósito</h3>
+          <p>
+            En Rincón de Matías somos orientadoras del quehacer educativo, buscando estrategias
+            que favorecen el desarrollo personal de cada niño y niña. Les entregamos las herramientas
+            que nos permiten potenciar sus habilidades, aptitudes y motivaciones, incrementar
+            aprendizajes y considerar una visión de proyección hacia sus próximos períodos escolares
+            y su formación ciudadana.
+          </p>
+        </div>
+
+        <div class="proyecto__beneficios">
+          <h3>Lo que ofrecemos</h3>
+          <ul class="proyecto__lista">
+            {[
+              {
+                icono: '🌱',
+                titulo: 'Desarrollo integral personalizado',
+                desc: 'Aprendizajes adaptados al ritmo de cada niño, combinando actividades lúdicas, bienestar y socialización.',
+              },
+              {
+                icono: '🏫',
+                titulo: 'Ambiente seguro y estimulante',
+                desc: 'Espacios diseñados para lograr aprendizajes significativos, con monitoreo constante y un equipo técnico-pedagógico comprometido.',
+              },
+              {
+                icono: '🤝',
+                titulo: 'Apoyo constante a la familia',
+                desc: 'Horarios flexibles y adaptables, alimentación equilibrada y comunicación permanente con cada familia.',
+              },
+            ].map(b => (
+              <li class="proyecto__item">
+                <span class="proyecto__icono">{b.icono}</span>
+                <div>
+                  <strong>{b.titulo}</strong>
+                  <p>{b.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div class="proyecto__valores">
+        <div class="proyecto__valores-header">
+          <h3>Viviendo nuestros valores</h3>
+          <p>
+            Durante más de 30 años hemos construido una comunidad educativa donde el respeto,
+            la honestidad, la alegría, el compañerismo, la empatía, la responsabilidad, la tolerancia
+            y la solidaridad son vivencias diarias que moldean el carácter de los niños mientras
+            interactúan con sus pares y educadoras.
+          </p>
+        </div>
+        <div class="proyecto__valores-grid">
+          {[
+            { icono: '🤝', valor: 'Respeto' },
+            { icono: '😊', valor: 'Honestidad' },
+            { icono: '🌟', valor: 'Alegría' },
+            { icono: '👫', valor: 'Compañerismo' },
+            { icono: '💛', valor: 'Empatía' },
+            { icono: '⚖️', valor: 'Responsabilidad' },
+            { icono: '🌈', valor: 'Tolerancia' },
+            { icono: '🙌', valor: 'Solidaridad' },
+          ].map(({ icono, valor }) => (
+            <div class="proyecto__valor">
+              <span>{icono}</span>
+              <strong>{valor}</strong>
+            </div>
+          ))}
+        </div>
+        <div class="proyecto__valores-beneficios">
+          {[
+            { icono: '🌱', titulo: 'Formación integral en valores', desc: 'Desarrollo del carácter y habilidades sociales a través de experiencias significativas diarias.' },
+            { icono: '🏫', titulo: 'Convivencia positiva', desc: 'Espacios seguros donde se practica el respeto y la empatía entre todos los miembros de la comunidad.' },
+            { icono: '🤸', titulo: 'Aprendizaje social activo', desc: 'Experiencias educativas diseñadas para fortalecer el compañerismo, la responsabilidad y la solidaridad.' },
+          ].map(b => (
+            <div class="proyecto__vbenefit">
+              <span class="proyecto__icono">{b.icono}</span>
+              <div>
+                <strong>{b.titulo}</strong>
+                <p>{b.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Compromiso -->
+    <div class="compromiso__grid" style="margin-top: 3rem">
+      <div class="compromiso__texto">
+        <span class="section__badge">Compromiso</span>
+        <h3 style="margin-top: .75rem">Compromiso con la educación integral</h3>
+        <p>
+          En Rincón de Matías mantenemos el compromiso diario de potenciar la calidad de la educación,
+          promoviendo la equidad y la pertinencia social y cultural en cada etapa del desarrollo infantil,
+          a través de un enfoque educativo integral. Contamos con un Proyecto Educativo Institucional
+          sólido que guía a todos los estamentos de nuestra comunidad educativa. Con este compromiso,
+          buscamos formar niños autónomos, sensibles a su entorno y preparados para los desafíos del futuro.
+        </p>
+      </div>
+      <div class="compromiso__items">
+        {[
+          { icono: '🎯', texto: 'Educación personalizada y de calidad, adaptada a las necesidades individuales de cada niño.' },
+          { icono: '🌍', texto: 'Entorno inclusivo y equitativo, que respeta y valora la diversidad cultural y social.' },
+          { icono: '📘', texto: 'Proyecto educativo integral que asegura experiencias significativas y aprendizaje constante.' },
+        ].map(c => (
+          <div class="compromiso__item">
+            <span>{c.icono}</span>
+            <p>{c.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Desarrollo -->
+    <div class="compromiso__grid" style="margin-top: 3rem; padding-top: 3rem; border-top: 1px dashed rgba(42,31,24,.1)">
+      <div class="compromiso__texto">
+        <span class="section__badge">Desarrollo</span>
+        <h3 style="margin-top: .75rem">Creciendo con confianza</h3>
+        <p>
+          Fomentamos el desarrollo cognitivo, emocional y social de cada niño a través de experiencias
+          significativas y planificadas, complementadas con recursos educativos de alta calidad.
+          Evaluamos diariamente las actividades realizadas, asegurando aprendizajes fundamentales y
+          detectando oportunidades para potenciar las habilidades de cada niño. Mantenemos comunicación
+          constante con las familias, informándoles sobre los logros alcanzados y coordinando apoyo
+          especializado cuando es necesario.
+        </p>
+      </div>
+      <div class="compromiso__items">
+        {[
+          { icono: '🧠', texto: 'Aprendizaje personalizado, adaptado al ritmo y necesidades de cada niño.' },
+          { icono: '📊', texto: 'Evaluaciones continuas que garantizan un progreso constante y significativo.' },
+          { icono: '👨‍👩‍👧', texto: 'Colaboración con la familia, asegurando un apoyo integral y efectivo para los niños.' },
+        ].map(c => (
+          <div class="compromiso__item">
+            <span>{c.icono}</span>
+            <p>{c.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Seguridad -->
+    <div class="compromiso__grid" style="margin-top: 3rem; padding-top: 3rem; border-top: 1px dashed rgba(42,31,24,.1)">
+      <div class="compromiso__texto">
+        <span class="section__badge">Seguridad</span>
+        <h3 style="margin-top: .75rem">Un entorno seguro para aprender y crecer</h3>
+        <p>
+          El equipo técnico-pedagógico trabaja para crear un entorno seguro y educativo que promueva
+          el bienestar integral de cada niño y niña. Nuestro enfoque favorece la adaptación e integración
+          al grupo, respetando su individualidad y potenciando un rol activo en su proceso de desarrollo.
+          Diseñamos experiencias de aprendizaje significativas que incluyen la expresión artística,
+          cultural y social, asegurando equidad y calidad en cada actividad. Fomentamos el respeto por
+          la diversidad y fortalecemos habilidades motrices, culturales e históricas que enriquecen el
+          aprendizaje integral.
+        </p>
+      </div>
+      <div class="compromiso__items">
+        {[
+          { icono: '🛡️', texto: 'Entorno inclusivo y seguro, que respeta la individualidad de cada niño.' },
+          { icono: '🌿', texto: 'Desarrollo integral con aprendizajes significativos y adaptados a sus etapas de crecimiento.' },
+          { icono: '🎭', texto: 'Experiencias culturales y artísticas que enriquecen su conocimiento y habilidades.' },
+        ].map(c => (
+          <div class="compromiso__item">
+            <span>{c.icono}</span>
+            <p>{c.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Recursos -->
+    <div class="compromiso__grid" style="margin-top: 3rem; padding-top: 3rem; border-top: 1px dashed rgba(42,31,24,.1)">
+      <div class="compromiso__texto">
+        <span class="section__badge">Recursos</span>
+        <h3 style="margin-top: .75rem">Servicios que fomentan el aprendizaje integral</h3>
+        <p>
+          Ofrecemos un entorno cuidadosamente diseñado para satisfacer las necesidades pedagógicas,
+          recreativas y de juego de los niños. Proveemos todos los materiales necesarios para experiencias
+          significativas, desde actividades psicomotrices hasta juegos y recreación. Contamos con espacios
+          libres interiores y exteriores adecuados para explorar y aprender, complementados por tecnología
+          como equipos de música, computación y multimedia que enriquecen el proceso educativo.
+        </p>
+      </div>
+      <div class="compromiso__items">
+        {[
+          { icono: '📚', texto: 'Materiales educativos desafiantes y diversos, preparados para cada actividad pedagógica y recreativa.' },
+          { icono: '🏡', texto: 'Espacios seguros y versátiles, ideales para el desarrollo integral de niños y niñas.' },
+          { icono: '💻', texto: 'Tecnología educativa que potencia aprendizajes interactivos y creativos.' },
+        ].map(c => (
+          <div class="compromiso__item">
+            <span>{c.icono}</span>
+            <p>{c.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    </div>
+  </section>
+
   <!-- ── EQUIPO ── -->
   <section class="section section--crema2">
     <div class="container">
@@ -326,5 +537,117 @@ import Footer from '../components/Footer.astro';
     .valores__grid,
     .equipo__grid,
     .salas__grid { grid-template-columns: 1fr; }
+  }
+  /* Proyecto educativo */
+  .proyecto__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .proyecto__proposito h3,
+  .proyecto__beneficios h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--crema-2);
+  }
+  .proyecto__proposito p {
+    font-size: .95rem;
+    line-height: 1.75;
+    opacity: .8;
+  }
+  .proyecto__lista { list-style: none; }
+  .proyecto__item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: .75rem;
+    padding: .85rem 0;
+    border-top: 1px dashed rgba(42,31,24,.1);
+    align-items: start;
+  }
+  .proyecto__item:first-child { border-top: 0; }
+  .proyecto__item strong { display: block; font-size: .95rem; margin-bottom: .2rem; }
+  .proyecto__item p { font-size: .85rem; opacity: .65; margin: 0; line-height: 1.5; }
+  .proyecto__icono {
+    width: 36px; height: 36px;
+    background: var(--crema-2);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+  }
+
+  .proyecto__valores {
+    background: var(--crema-2);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .proyecto__valores-header {
+    margin-bottom: 2rem;
+  }
+  .proyecto__valores-header h3 { font-size: 1.2rem; margin-bottom: .75rem; }
+  .proyecto__valores-header p  { font-size: .9rem; opacity: .75; line-height: 1.7; max-width: 70ch; }
+
+  .proyecto__valores-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-bottom: 2rem;
+  }
+  .proyecto__valor {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--crema);
+    border-radius: 999px;
+    padding: .4rem 1rem;
+    font-size: .9rem;
+    box-shadow: var(--shadow);
+  }
+  .proyecto__valor strong { font-family: var(--font-titulo); font-weight: 600; }
+
+  .proyecto__valores-beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    border-top: 1px dashed rgba(42,31,24,.1);
+    padding-top: 1.75rem;
+  }
+  .proyecto__vbenefit {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: .75rem;
+    align-items: start;
+  }
+  .proyecto__vbenefit strong { display: block; font-size: .9rem; margin-bottom: .2rem; }
+  .proyecto__vbenefit p      { font-size: .82rem; opacity: .65; margin: 0; line-height: 1.5; }
+
+  /* Compromiso */
+  .compromiso__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .compromiso__texto h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+  .compromiso__texto p  { font-size: .95rem; line-height: 1.75; opacity: .8; }
+  .compromiso__items { display: flex; flex-direction: column; gap: 1rem; }
+  .compromiso__item {
+    display: flex;
+    gap: .75rem;
+    background: var(--crema-2);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    align-items: flex-start;
+  }
+  .compromiso__item span { font-size: 1.3rem; flex-shrink: 0; }
+  .compromiso__item p { font-size: .875rem; opacity: .75; margin: 0; line-height: 1.55; }
+
+  @media (max-width: 900px) {
+    .proyecto__grid,
+    .compromiso__grid,
+    .proyecto__valores-beneficios { grid-template-columns: 1fr; }
   }
 </style>
