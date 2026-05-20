@@ -191,12 +191,12 @@ import Footer from '../components/Footer.astro';
 
       <div class="timeline">
         {[
-          { hora: '7:30',  nino: { titulo: 'Llegada',         desc: 'Recepción personalizada. Cada niño llega a su espacio.' },    papa: { titulo: 'Entrega rápida',    desc: 'Sin apuro. Sabemos que tu día empieza aquí.' } },
-          { hora: '9:00',  nino: { titulo: 'Desayuno',        desc: 'Nutritivo y en calma. Buenos hábitos desde chicos.' },         papa: { titulo: 'Notificación',      desc: '¿Todo bien? Te avisamos si algo es distinto.' } },
-          { hora: '10:00', nino: { titulo: 'Actividad guiada',desc: 'Arte, música, lenguaje o exploración según la semana.' },       papa: { titulo: 'Tú en lo tuyo',     desc: 'Trabaja tranquilo. Aquí estamos.' } },
-          { hora: '12:00', nino: { titulo: 'Almuerzo',        desc: 'Menú balanceado. Aprendemos a comer juntos.' },                 papa: { titulo: 'Foto del día',      desc: 'A veces te mandamos una foto. Solo porque sí.' } },
-          { hora: '14:00', nino: { titulo: 'Siesta / juego',  desc: 'Descanso para los más pequeños. Juego libre para los grandes.' }, papa: { titulo: 'Todo tranquilo',   desc: 'La tarde avanza sin sorpresas.' } },
-          { hora: '18:00', nino: { titulo: 'Despedida',       desc: 'Con resumen del día. Qué hizo, cómo estuvo.' },                 papa: { titulo: 'Lo recoges',        desc: 'Fin del día. Los dos lo disfrutaron.' } },
+          { hora: '7:30–9:00', nino: { titulo: 'Llegada flexible',   desc: 'El jardín abre a las 7:30. Cada familia llega según su jornada, sin apuro.' }, papa: { titulo: 'Entrega tranquila', desc: 'Coordinamos tu horario de llegada. No hay una sola hora fija.' } },
+          { hora: '9:00',      nino: { titulo: 'Desayuno',          desc: 'Nutritivo y en calma. Buenos hábitos desde chicos.' },                               papa: { titulo: 'Tu día ya empezó',  desc: 'A esta hora ya estás en lo tuyo.' } },
+          { hora: '10:00',     nino: { titulo: 'Actividad guiada',  desc: 'Arte, música, lenguaje o exploración según la semana.' },                            papa: { titulo: 'Tú en lo tuyo',     desc: 'Trabaja tranquilo. Aquí estamos.' } },
+          { hora: '12:00',     nino: { titulo: 'Almuerzo',          desc: 'Menú balanceado. Aprendemos a comer juntos.' },                                      papa: { titulo: 'Todo en orden',     desc: 'La jornada avanza sin sorpresas.' } },
+          { hora: '14:00',     nino: { titulo: 'Siesta / juego',    desc: 'Descanso para los más pequeños. Juego libre para los grandes.' },                    papa: { titulo: 'La tarde avanza',   desc: 'Sin interrupciones. Avisamos si algo es importante.' } },
+          { hora: '17:30–18:00', nino: { titulo: 'Despedida',       desc: 'Con resumen del día. Qué hizo, cómo estuvo.' },                                     papa: { titulo: 'Lo retiras',        desc: 'Lun–Jue hasta las 18:00 · Vie hasta las 17:30.' } },
         ].map(({ hora, nino, papa }, i) => (
           <div class={`timeline__moment ${i % 2 === 1 ? 'timeline__moment--swap' : ''}`}>
             <div class="timeline__nino">
@@ -580,7 +580,7 @@ import Footer from '../components/Footer.astro';
     padding-top: .25rem;
   }
   .timeline__reloj {
-    width: 64px; height: 64px;
+    width: 80px; height: 80px;
     background: var(--cafe);
     color: var(--crema);
     border-radius: 50%;
@@ -588,9 +588,10 @@ import Footer from '../components/Footer.astro';
     place-items: center;
     font-family: var(--font-titulo);
     font-weight: 700;
-    font-size: .8rem;
-    line-height: 1.1;
+    font-size: .72rem;
+    line-height: 1.2;
     text-align: center;
+    padding: .25rem;
     box-shadow: 0 0 0 5px var(--crema);
   }
   .timeline__nino { text-align: right; padding-right: 2rem; }
@@ -610,13 +611,13 @@ import Footer from '../components/Footer.astro';
   }
   .timeline__quien {
     font-family: var(--font-mano);
-    font-size: 1rem;
-    margin-bottom: .2rem;
+    font-size: 1.15rem;
+    margin-bottom: .3rem;
   }
   .timeline__quien--nino { color: var(--rosa); }
   .timeline__quien--papa { color: var(--azul); }
-  .timeline__moment h4 { font-size: 1rem; margin-bottom: .25rem; }
-  .timeline__moment p  { font-size: .85rem; opacity: .65; }
+  .timeline__moment h4 { font-size: 1.1rem; margin-bottom: .35rem; }
+  .timeline__moment p  { font-size: .95rem; opacity: .7; }
 
   /* ── VOCES ── */
   .voces__grid {
