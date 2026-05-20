@@ -47,10 +47,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="hero__img-wrap">
-        <div class="hero__img-placeholder" aria-hidden="true">
-          <!-- Reemplazar con foto real del jardín -->
-          <span>📷 Foto real del jardín</span>
-        </div>
+        <img class="hero__img" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/infraestructura/fachada-nueva.jpg`} alt="Fachada Jardín Infantil Rincón de Matías" />
         <div class="hero__blob hero__blob--1"></div>
         <div class="hero__blob hero__blob--2"></div>
       </div>
@@ -384,17 +381,12 @@ import Footer from '../components/Footer.astro';
   .hero__img-wrap {
     position: relative;
   }
-  .hero__img-placeholder {
+  .hero__img {
+    width: 100%;
     aspect-ratio: 4/3;
-    background: var(--crema-2);
+    object-fit: cover;
     border-radius: var(--radius);
-    border: 2px dashed var(--naranja);
-    display: grid;
-    place-items: center;
-    font-family: var(--font-mano);
-    font-size: 1.1rem;
-    color: var(--naranja);
-    opacity: .6;
+    box-shadow: var(--shadow);
     position: relative;
     z-index: 1;
   }

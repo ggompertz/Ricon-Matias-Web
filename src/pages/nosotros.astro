@@ -349,10 +349,10 @@ import Footer from '../components/Footer.astro';
       </div>
       <div class="salas__grid">
         {[
-          { nombre: 'Sala Encina',    ciclo: 'Sala Cuna',         color: 'var(--rosa)',     img: '/images/infraestructura/encina.jpg',       desc: 'Para los más pequeños. Cálida, segura, diseñada para la estimulación temprana.' },
-          { nombre: 'Sala Encina',    ciclo: 'Sala Cuna / Medio', color: 'var(--azul)',    img: '/images/infraestructura/encina-1.jpg',     desc: 'Transición entre ciclos. Espacio de exploración y movimiento libre.' },
-          { nombre: 'Patio',          ciclo: 'Todos los ciclos',  color: 'var(--verde)',   img: '/images/infraestructura/fuerte-madera.jpg', desc: 'Patio con juegos y área verde. El espacio para correr, saltar y ser niño.' },
-          { nombre: 'Fachada',        ciclo: 'Av. Concón Reñaca 66', color: 'var(--naranja)', img: '/images/infraestructura/fachada.jpg',   desc: 'En el mismo lugar desde 1994. Una dirección que las familias conocen de generación en generación.' },
+          { nombre: 'Sala Lilén',      ciclo: 'Sala Cuna',            color: 'var(--rosa)',    img: '/images/infraestructura/sala-lilen.jpg',        desc: 'Para los más pequeños. Cálida, segura, diseñada para la estimulación temprana.' },
+          { nombre: 'Sala Palmera',   ciclo: 'Jardín Infantil',      color: 'var(--azul)',   img: '/images/infraestructura/sala-palmera.jpg',      desc: 'Espacio de exploración, aprendizaje y movimiento libre.' },
+          { nombre: 'Patio Central',  ciclo: 'Todos los ciclos',     color: 'var(--verde)',  img: '/images/infraestructura/patio-central.jpg',     desc: 'El corazón del jardín. Espacio para correr, jugar y compartir.' },
+          { nombre: 'Patio Arena',    ciclo: 'Psicomotricidad',      color: 'var(--naranja)', img: '/images/infraestructura/patio-psicomotricidad.jpg', desc: 'Área de psicomotricidad y juego sensorial al aire libre.' },
         ].map(s => (
           <div class="sala__card" style={`border-top: 5px solid ${s.color}`}>
             <img class="sala__img" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${s.img}`} alt={s.nombre} loading="lazy" />
