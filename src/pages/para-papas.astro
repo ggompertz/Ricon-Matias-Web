@@ -222,7 +222,7 @@ import Footer from '../components/Footer.astro';
         Treinta minutos en el jardín responden más preguntas que cualquier página web.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap">
-        <a href="/contacto#agendar" class="btn btn--naranja">Agendar visita →</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/contacto#agendar`} class="btn btn--naranja">Agendar visita →</a>
         <a href="https://wa.me/56XXXXXXXXX" class="btn btn--outline" target="_blank" rel="noopener">
           💬 Escribir por WhatsApp
         </a>

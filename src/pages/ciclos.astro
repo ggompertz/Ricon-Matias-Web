@@ -196,9 +196,9 @@ import Footer from '../components/Footer.astro';
     <div class="container">
       <h2 class="section__titulo">¿En qué ciclo está tu hijo?</h2>
       <p class="section__subtitulo" style="margin: 0 auto 2rem">
-        Agendá una visita y te mostramos el espacio que le corresponde.
+        Agenda una visita y te mostramos el espacio que le corresponde.
       </p>
-      <a href="/contacto#agendar" class="btn btn--naranja">Agendar visita →</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/contacto#agendar`} class="btn btn--naranja">Agendar visita →</a>
     </div>
   </section>
 

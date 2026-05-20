@@ -25,8 +25,8 @@ import Footer from '../components/Footer.astro';
           las familias también pueden crecer tranquilas.
         </p>
         <div class="hero__actions">
-          <a href="/contacto#agendar" class="btn btn--naranja">Agendar visita →</a>
-          <a href="/ciclos" class="btn btn--outline">Ver ciclos</a>
+          <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/contacto#agendar`} class="btn btn--naranja">Agendar visita →</a>
+          <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/ciclos`} class="btn btn--outline">Ver ciclos</a>
         </div>
         <div class="hero__datos">
           <div class="hero__dato">
@@ -282,7 +282,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="matricula__cta">
-        <a href="/contacto#agendar" class="btn matricula__btn">
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/contacto#agendar`} class="btn matricula__btn">
           Agendar visita ahora →
         </a>
       </div>
