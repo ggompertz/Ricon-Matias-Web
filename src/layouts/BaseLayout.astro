@@ -12,6 +12,52 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["ChildCare", "LocalBusiness"],
+  "name": "Jardín Infantil Rincón de Matías",
+  "description": "Jardín infantil en Concón con 30 años de historia. Sala Cuna (3 meses–2 años) y Jardín Infantil (2–6 años) con jornada extendida.",
+  "url": "https://www.rincondematias.cl",
+  "telephone": "+56XXXXXXXXX",
+  "email": "rincondematias@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Concón Reñaca 66",
+    "addressLocality": "Concón",
+    "addressRegion": "Valparaíso",
+    "addressCountry": "CL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -32.9207,
+    "longitude": -71.5281
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+      "opens": "07:30",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "07:30",
+      "closes": "17:30"
+    }
+  ],
+  "image": "https://www.rincondematias.cl/images/infraestructura/fachada-nueva.jpg",
+  "logo": "https://www.rincondematias.cl/images/site/logo.png",
+  "sameAs": ["https://www.instagram.com/rincondematias"],
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "RBD",
+    "value": "41528-6"
+  },
+  "areaServed": ["Concón", "Reñaca", "Viña del Mar"],
+  "foundingDate": "1995"
+};
 ---
 <!doctype html>
 <html lang="es">
@@ -29,10 +75,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta property="og:title"       content={`${title} | Rincón de Matías`} />
   <meta property="og:description" content={description} />
   <meta property="og:image"       content={new URL(ogImage, Astro.site)} />
+  <meta property="og:locale"      content="es_CL" />
+  <meta property="og:site_name"   content="Rincón de Matías" />
   <meta name="twitter:card"       content="summary_large_image" />
 
+  <!-- Schema JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.png`} />
+  <link rel="icon" type="image/png" href="/favicon.png" />
 
   <slot name="head" />
 </head>

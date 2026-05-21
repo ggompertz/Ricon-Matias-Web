@@ -94,7 +94,7 @@ import Footer from '../components/Footer.astro';
         <div class="dual__lane dual__lane--ninos">
           <p class="dual__quien">Para los niños</p>
           <h3>Un mundo listo para ser explorado</h3>
-          <div class="dual__img-placeholder" aria-hidden="true">📷 Foto sala o patio</div>
+          <img src="/images/infraestructura/sala-lilen.jpg" alt="Sala de actividades Rincón de Matías — espacio de exploración para niños en Concón" class="dual__img" loading="lazy" />
           <ul class="dual__lista">
             {[
               ['🎨', 'Experiencias de aprendizaje', 'Cada actividad tiene un propósito educativo pensado para su edad y etapa.'],
@@ -113,7 +113,7 @@ import Footer from '../components/Footer.astro';
         <div class="dual__lane dual__lane--papas">
           <p class="dual__quien dual__quien--papas">Para los papás</p>
           <h3>Un jardín que se adapta a tu vida</h3>
-          <div class="dual__img-placeholder" aria-hidden="true">📷 Foto familia / entrada</div>
+          <img src="/images/infraestructura/fachada.jpg" alt="Entrada principal Jardín Infantil Rincón de Matías, Av. Concón Reñaca 66" class="dual__img" loading="lazy" />
           <ul class="dual__lista">
             {[
               ['⏰', 'Horarios de verdad', 'Lun–Jue 7:30–18:00 · Vie 7:30–17:30. Porque el trabajo no siempre termina a las 16:00.'],
@@ -469,16 +469,12 @@ import Footer from '../components/Footer.astro';
     margin-bottom: 1.25rem;
     max-width: 22ch;
   }
-  .dual__img-placeholder {
+  .dual__img {
+    width: 100%;
     aspect-ratio: 16/9;
-    background: rgba(42,31,24,.07);
+    object-fit: cover;
     border-radius: 10px;
-    display: grid;
-    place-items: center;
-    font-family: var(--font-mano);
-    opacity: .5;
     margin-bottom: 1.5rem;
-    font-size: .9rem;
   }
   .dual__lista {
     list-style: none;
