@@ -228,25 +228,31 @@ import Footer from '../components/Footer.astro';
           {
             texto: 'Llevamos tres años con Rincón de Matías y no cambiaríamos nada. La comunicación es excelente y mi hija adora a sus educadoras. Nos adaptaron el horario en semanas difíciles sin ningún problema.',
             familia: 'Familia Torres Valdivia',
+            inicial: 'TV',
             periodo: 'Desde 2022',
           },
           {
             texto: 'Lo que más valoramos es la flexibilidad real. No solo de palabra. Cuando tuvimos un cambio laboral complicado, el jardín nos apoyó ajustando la jornada sin drama.',
             familia: 'Familia Morales Sepúlveda',
+            inicial: 'MS',
             periodo: 'Desde 2023',
           },
           {
             texto: 'Mi hijo entró a los 5 meses a Sala Cuna. Fue difícil dejarlo, pero en pocas semanas ya llegaba corriendo al jardín. Eso dice todo.',
             familia: 'Familia Riquelme Fuentes',
+            inicial: 'RF',
             periodo: 'Desde 2024',
           },
         ].map((v, i) => (
           <div class={`voces__card voces__card--${i}`}>
             <span class="voces__comilla" aria-hidden="true">"</span>
             <p>{v.texto}</p>
-            <div>
-              <strong class="voces__familia">{v.familia}</strong>
-              <span class="voces__periodo">{v.periodo}</span>
+            <div class="voces__autor">
+              <div class="voces__avatar">{v.inicial}</div>
+              <div>
+                <strong class="voces__familia">{v.familia}</strong>
+                <span class="voces__periodo">{v.periodo}</span>
+              </div>
             </div>
           </div>
         ))}
@@ -637,6 +643,24 @@ import Footer from '../components/Footer.astro';
     margin-bottom: 1rem;
     padding-right: 2rem;
   }
+  .voces__autor {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+  }
+  .voces__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--rosa);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-titulo);
+    font-weight: 700;
+    font-size: .8rem;
+    flex-shrink: 0;
+  }
   .voces__familia {
     display: block;
     font-family: var(--font-titulo);
@@ -704,6 +728,10 @@ import Footer from '../components/Footer.astro';
     .conservamos__grid {
       grid-template-columns: 1fr;
     }
+    .hero__inner { gap: 1.5rem; padding-block: 1.5rem; }
+    .hero__img-wrap { order: -1; }
+    .hero__h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
+    .hero__sub { font-size: 1rem; }
     .faq__grid,
     .voces__grid,
     .matricula__steps {

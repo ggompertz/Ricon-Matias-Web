@@ -316,13 +316,15 @@ import Footer from '../components/Footer.astro';
       </div>
       <div class="equipo__grid">
         {[
-          { nombre: 'Directora', rol: 'Dirección', desc: 'Al frente del jardín hace más de 15 años. Conoce a cada familia por nombre.' },
-          { nombre: 'Educadora Sala Cuna', rol: 'Sala Cuna · 1er Ciclo', desc: 'Especialista en estimulación temprana. Referente para bebés de 3 meses a 2 años.' },
-          { nombre: 'Educadora Jardín', rol: 'Jardín · 2do Ciclo', desc: 'Prepara a los niños para el colegio con metodología lúdica y afectiva.' },
-          { nombre: 'Técnicos en Ed. Parvularia', rol: 'Apoyo en todos los ciclos', desc: 'Presentes en cada sala. La relación cotidiana con los niños pasa por ellos.' },
+          { nombre: 'Directora', inicial: 'D', color: 'var(--naranja)', rol: 'Dirección', desc: 'Al frente del jardín hace más de 15 años. Conoce a cada familia por nombre.' },
+          { nombre: 'Educadora Sala Cuna', inicial: 'SC', color: 'var(--rosa)', rol: 'Sala Cuna · 1er Ciclo', desc: 'Especialista en estimulación temprana. Referente para bebés de 3 meses a 2 años.' },
+          { nombre: 'Educadora Jardín', inicial: 'EJ', color: 'var(--verde)', rol: 'Jardín · 2do Ciclo', desc: 'Prepara a los niños para el colegio con metodología lúdica y afectiva.' },
+          { nombre: 'Técnicos en Ed. Parvularia', inicial: 'TE', color: 'var(--azul)', rol: 'Apoyo en todos los ciclos', desc: 'Presentes en cada sala. La relación cotidiana con los niños pasa por ellos.' },
         ].map(e => (
           <div class="equipo__card">
-            <div class="equipo__foto-placeholder" aria-hidden="true">📷</div>
+            <div class="equipo__avatar" style={`background: ${e.color}22`}>
+              <span style={`color: ${e.color}`}>{e.inicial}</span>
+            </div>
             <div class="equipo__info">
               <strong>{e.nombre}</strong>
               <span class="equipo__rol">{e.rol}</span>
@@ -332,7 +334,7 @@ import Footer from '../components/Footer.astro';
         ))}
       </div>
       <p class="equipo__nota">
-        📷 <em>Las fotos del equipo serán incorporadas por el jardín antes del lanzamiento.</em>
+        <em>Las fotos reales del equipo serán incorporadas antes del lanzamiento.</em>
       </p>
     </div>
   </section>
@@ -484,13 +486,17 @@ import Footer from '../components/Footer.astro';
     overflow: hidden;
     box-shadow: var(--shadow);
   }
-  .equipo__foto-placeholder {
+  .equipo__avatar {
     aspect-ratio: 1;
-    background: var(--crema-2);
     display: grid;
     place-items: center;
-    font-size: 2.5rem;
     border-bottom: 1px solid rgba(42,31,24,.06);
+  }
+  .equipo__avatar span {
+    font-family: var(--font-titulo);
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -.02em;
   }
   .equipo__info { padding: 1.25rem; }
   .equipo__info strong { display: block; font-family: var(--font-titulo); font-size: 1rem; }
